@@ -10,22 +10,23 @@ Ensure the account used on the playbook is allowed to interact with the kubernet
 
 Role Variables
 --------------
+# Location for kubectl on the nodes.
+bin_dir: 
+# Period of time in seconds given to each pod to terminate gracefully. If
+# negative, the default value specified in the pod will be used.
+drain_grace_period:
+# The length of time to wait before giving up, zero means infinite.
+drain_timeout:
+# Period of time in seconds given before draining the next node
+wait_after_uncordon_enabled: 
+wait_after_uncordon_period_seconds: 
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
 
 Dependencies
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
-
 Example Playbook
 ----------------
-
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
 
 License
 -------
