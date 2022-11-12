@@ -7,7 +7,6 @@
 ## Operations for my home network
 _...with Ansible and Kubernetes!_ :sailboat:
 
-
 [![GitHub Super-Linter](https://github.com/John-Limb/Ansible-Lab-Automation/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
 
 ## :closed_book: Overview
