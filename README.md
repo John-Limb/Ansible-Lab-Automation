@@ -10,7 +10,7 @@ _...with Ansible and Kubernetes!_ :sailboat:
 
 ![lint]
 ![pre-commit]
-[![GitHub Super-Linter](https://github.com/<OWNER>/<REPOSITORY>/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
+[![GitHub Super-Linter](https://github.com/John-Limb/Ansible-Lab-Automation/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
 
 ## :closed_book: Overview
 This repository contains everything I use to maintain the devices and clusters in my home. For more
