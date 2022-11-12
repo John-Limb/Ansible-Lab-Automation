@@ -12,9 +12,9 @@ _...with Ansible and Kubernetes!_ :sailboat:
 ![pre-commit]
 
 ## :closed_book: Overview
-This repository contains everything I use to setup and run the devices in my home. For more
+This repository contains everything I use to setup and maintain the devices and clusters in my home. For more
 details, see the readme's in each folder
-* [ansible](ansible/) roles for additional configuration and application installation
+* [Ansible](roles/) roles for additional configuration and application installation > Top level playbooks are in the top level of this repo
 
 ## :gear: Hardware
 I try to run everything bare metal to get the most out of each device
