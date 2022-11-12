@@ -27,6 +27,6 @@ I try to run everything bare metal to get the most out of each device
 
 
 ## :handshake:&nbsp; Thanks
-I learned a lot from the people that have shared their clusters over at
+I learned a lot from the people over @ 
 [awesome-home-kubernetes](https://github.com/k8s-at-home/awesome-home-kubernetes)
 and from the [k8s@home discord channel](https://discord.gg/DNCynrJ).
