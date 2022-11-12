@@ -25,6 +25,6 @@
     --ignore-daemonsets
     --grace-period {{ drain_grace_period }}
     --timeout {{ drain_timeout }}
-    --delete-local-data {{ kube_override_hostname|default(inventory_hostname) }}
+    --delete-emptydir-data {{ kube_override_hostname|default(inventory_hostname) }}
   delegate_to: "{{ groups['kube_control_plane'][0] }}"
   changed_when: false
