@@ -25,7 +25,6 @@ I try to run everything bare metal to get the most out of each device
 | Intel NUC8i3BEH         | 1     | 500GB SSD + 120GB NVMe   | Proxmox VM host one                          |
 | BeeLink SER3            | 1     | 500GB SSD + 120GB NVMe   | Proxmox VM host Two                          |
 
-...and a bunch of retired Rasbpberry Pi 1 and 2!
 
 ## :handshake:&nbsp; Thanks
 I learned a lot from the people that have shared their clusters over at
