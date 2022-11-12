@@ -1,3 +1,6 @@
 ---
 # tasks file for DNS
-- name: 
+- name: Update DNS
+  block:
+    - name: perform apt-update
+      include_tasks: apt-Update.yaml

@@ -24,4 +24,4 @@
 
     - name: Uncordon node
       include_tasks: 02-uncordon.yaml
-#ok
+
