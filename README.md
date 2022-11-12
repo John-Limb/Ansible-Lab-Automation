@@ -25,7 +25,7 @@ I try to run everything bare metal to get the most out of each device
 | Intel NUC8i3BEH         | 1     | 500GB SSD + 120GB NVMe   | Proxmox VM host one                          |
 | BeeLink SER3            | 1     | 500GB SSD + 120GB NVMe   | Proxmox VM host Two                          |
 
-## :padlock:&nbsp; Security
+## :lock:&nbsp; Security
 No hostnames or passwords are kept in this repo. 
 ## :handshake:&nbsp; Thanks
 I learned a lot from the people over @ 
