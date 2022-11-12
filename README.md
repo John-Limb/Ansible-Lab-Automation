@@ -26,8 +26,9 @@ I try to run everything bare metal to get the most out of each device
 | BeeLink SER3            | 1     | 500GB SSD + 120GB NVMe   | Proxmox VM host Two                          |
 
 ## :lock:&nbsp; Security
-No hostnames or passwords are kept in this repo. 
-## :lock:&nbsp; linting and 
+No hostnames or passwords are kept in this repo.
+## :lock:&nbsp; linting and code scanning
+Code linting is performed by [super linter](https://github.com/github/super-linter)
 ## :handshake:&nbsp; Thanks
 I learned a lot from the people over @ 
 [awesome-home-kubernetes](https://github.com/k8s-at-home/awesome-home-kubernetes)
