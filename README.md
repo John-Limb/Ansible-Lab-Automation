@@ -26,7 +26,7 @@ I try to run everything bare metal with virtual machines (running on Proxmox).
 
 ## :lock:&nbsp; Security
 No hostnames or passwords are kept in this repository.
-## :lock:&nbsp; linting and code scanning
+## :white_check_mark:&nbsp; linting and code scanning
 Code linting is performed by [Super-Linter](https://github.com/github/super-linter).
 ## :handshake:&nbsp; Thanks
 I learned a lot from the people over @ 
