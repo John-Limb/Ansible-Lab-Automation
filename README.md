@@ -4,7 +4,7 @@
    <img src="https://i.imgur.com/EXNTJnA.png" alt="kubernetes home logo" width="150" align="left" />
 </p>
 
-### Operations for my home...
+### Operations for my home network...
 _...with Ansible and Kubernetes!_ :sailboat:
 <br/><br/><br/><br/>
 
@@ -13,11 +13,10 @@ _...with Ansible and Kubernetes!_ :sailboat:
 ## :closed_book: Overview
 This repository contains everything I use to maintain the devices and clusters in my home. For more
 details, see the readme's in each folder
-* [Ansible](roles/) roles for additional configuration and application installation > Top level playbooks are in the top level of this repo
+* [Ansible](roles/) roles for additional configuration and application installation > Top level playbooks are in the top level of this repo.
 *
-
 ## :gear: Hardware
-I try to run everything bare metal to get the most out of each device
+I try to run everything bare metal with virtual machines (running on Proxmox).
 
 | Device                  | Count | Storage                  | Purpose                                      |
 |-------------------------|-------|--------------------------|----------------------------------------------|
@@ -28,8 +27,8 @@ I try to run everything bare metal to get the most out of each device
 ## :lock:&nbsp; Security
 No hostnames or passwords are kept in this repo.
 ## :lock:&nbsp; linting and code scanning
-Code linting is performed by [super linter](https://github.com/github/super-linter)
+Code linting is performed by [Super-Linter](https://github.com/github/super-linter)
 ## :handshake:&nbsp; Thanks
 I learned a lot from the people over @ 
-[awesome-home-kubernetes](https://github.com/k8s-at-home/awesome-home-kubernetes)
+[Awesome-home-kubernetes](https://github.com/k8s-at-home/awesome-home-kubernetes)
 and from the [k8s@home discord channel](https://discord.gg/DNCynrJ).
