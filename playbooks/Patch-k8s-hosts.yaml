@@ -8,4 +8,5 @@
   any_errors_fatal: "{{ any_errors_fatal | default(true) }}"
 
   roles:
-    - kubernetes: './roles/kubernetes'
+    - kubernetes
+      src: ./roles/kubernetes
