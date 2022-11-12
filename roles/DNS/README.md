@@ -1,12 +1,12 @@
-Kubernetes
+Role Name
 =========
 
-Role to patch kubernetes nodes OS (apt upgrade)
+A brief description of the role goes here.
 
 Requirements
 ------------
 
-Ensure the account used on the playbook is allowed to interact with the kubernetes API (0644) and that you have the relevent auth for your servers (Password or SSH Key)
+Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
 
 Role Variables
 --------------
