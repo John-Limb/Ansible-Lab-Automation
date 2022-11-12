@@ -10,6 +10,7 @@ _...with Ansible and Kubernetes!_ :sailboat:
 
 ![lint]
 ![pre-commit]
+[![GitHub Super-Linter](https://github.com/<OWNER>/<REPOSITORY>/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
 
 ## :closed_book: Overview
 This repository contains everything I use to maintain the devices and clusters in my home. For more
@@ -28,6 +29,7 @@ I try to run everything bare metal to get the most out of each device
 
 ## :lock:&nbsp; Security
 No hostnames or passwords are kept in this repo. 
+## :lock:&nbsp; linting and 
 ## :handshake:&nbsp; Thanks
 I learned a lot from the people over @ 
 [awesome-home-kubernetes](https://github.com/k8s-at-home/awesome-home-kubernetes)
