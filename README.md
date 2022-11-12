@@ -8,8 +8,6 @@
 _...with Ansible and Kubernetes!_ :sailboat:
 <br/><br/><br/><br/>
 
-![lint]
-![pre-commit]
 [![GitHub Super-Linter](https://github.com/John-Limb/Ansible-Lab-Automation/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
 
 ## :closed_book: Overview
