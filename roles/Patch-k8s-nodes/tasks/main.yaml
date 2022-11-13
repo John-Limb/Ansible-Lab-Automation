@@ -19,7 +19,7 @@
     - name: Cordon & drain node
       include_tasks: 01-drain.yaml
 
-    - name: Upgrade the Operating System
+    - name: Upgrade the packages
       include_tasks: "{{ ansible_distribution | lower }}.yaml"
 
     - name: Uncordon node
