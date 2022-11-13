@@ -1,0 +1,4 @@
+- name: Install foo
+  community.general.snap:
+    name:
+      - semaphore

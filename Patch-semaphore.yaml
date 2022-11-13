@@ -1,0 +1,10 @@
+---
+- hosts:
+    - Semaphore
+  become: true
+  become_method: sudo
+  serial: 1
+  any_errors_fatal: "{{ any_errors_fatal | default(true) }}"
+
+  roles:
+    - Semaphore

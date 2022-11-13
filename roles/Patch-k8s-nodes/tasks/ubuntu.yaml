@@ -1,6 +1,6 @@
 ---
 - name: Update all packages
-  become: true
+  become: yes
   become_method: sudo
   become_user: root
   apt:

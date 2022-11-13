@@ -1,2 +1,10 @@
 ---
 # tasks file for semaphore
+---
+# tasks file for DNS
+- name: Update semaphore
+  block:
+    - name: perform apt-update
+      include_tasks: apt-Update.yaml
+    - name: Update Semaphore snap
+      include_tasks: semaphore-update.yaml
