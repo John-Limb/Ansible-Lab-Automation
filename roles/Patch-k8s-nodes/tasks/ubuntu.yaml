@@ -4,6 +4,7 @@
     upgrade: dist
     update_cache: true
     force_apt_get: true
+  become: true
 
 - name: Check if reboot is required
   stat:
