@@ -12,6 +12,7 @@ _...with Ansible and Kubernetes!_ :sailboat:
 ## :closed_book: Overview
 This repository contains everything I use to maintain the devices and clusters in my home. For more
 details, see the readme's in each folder.
+Using Ansible-Galaxy to form the template for each roles folder structure to keep structures to a standard, Ansible semaphore is used to automate patching using templated jobs.
 * [Ansible](roles/) roles for additional configuration and application installation > Top level playbooks are in the top level of this repository.
 
 ## :computer: Gear  
