@@ -1,9 +1,11 @@
 ---
 - name: Update all packages
   apt:
-    upgrade: dist
+    upgrade: yes
     update_cache: true
     force_apt_get: true
+    autoclean: true
+    autoremove: true
   become: true
 
 - name: Check if reboot is required
