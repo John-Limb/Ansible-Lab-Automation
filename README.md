@@ -30,6 +30,7 @@ I try to run everything bare metal with virtual machines (running on Proxmox).
 No hostnames or passwords are kept in this repository.
 ## :white_check_mark:&nbsp; linting and code scanning
 Code linting is performed by [Super-Linter](https://github.com/github/super-linter).
+Application YAML is also check and validated by [Datree](https://github.com/marketplace/actions/datree-cli)
 ## :handshake:&nbsp; Thanks
 I learned a lot from the people over @ 
 [Awesome-home-kubernetes](https://github.com/k8s-at-home/awesome-home-kubernetes)
