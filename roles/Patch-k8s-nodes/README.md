@@ -10,6 +10,7 @@ Ensure the account used on the playbook is allowed to interact with the kubernet
 
 Role Variables
 --------------
+```
 # Location for kubectl on the nodes.
 bin_dir: 
 # Period of time in seconds given to each pod to terminate gracefully. If
@@ -20,7 +21,7 @@ drain_timeout:
 # Period of time in seconds given before draining the next node
 wait_after_uncordon_enabled: 
 wait_after_uncordon_period_seconds: 
-
+```
 
 Dependencies
 ------------
