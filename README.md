@@ -8,6 +8,7 @@
 _...with Ansible and Kubernetes!_ :sailboat:
 
 [![GitHub Super-Linter](https://github.com/John-Limb/Ansible-Lab-Automation/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
+[![Datree Policy Check](https://github.com/John-Limb/Ansible-Lab-Automation/actions/workflows/datree.yml/badge.svg)](https://github.com/marketplace/actions/datree-cli)
 
 ## :closed_book: Overview
 This repository contains everything I use to maintain the devices and clusters in my home. For more
