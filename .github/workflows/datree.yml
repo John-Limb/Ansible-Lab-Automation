@@ -1,3 +1,5 @@
+name: Datree Policy Check
+
 on:
   push:
     branches: [ main ]
