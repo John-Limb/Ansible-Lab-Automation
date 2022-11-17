@@ -14,6 +14,7 @@ This repository contains everything I use to maintain the devices and clusters i
 details, see the readme's in each folder.
 Using Ansible-Galaxy to form the template for each roles folder structure to keep structures to a standard, Ansible semaphore is used to automate patching using templated jobs.
 * [Ansible](roles/) roles for additional configuration and application installation > Top level playbooks are in the top level of this repository.
+* [Apps](Apps/) YAML files for configuation and deployment off applications into kubernetes
 
 ## :computer: Gear  
 I try to run everything bare metal with virtual machines (running on Proxmox).
@@ -23,6 +24,7 @@ I try to run everything bare metal with virtual machines (running on Proxmox).
 | HP MicroServer          | 1     | 12TB RAID Z1             | Media and backup storage                     |
 | Intel NUC8i3BEH         | 1     | 500GB SSD + 120GB NVMe   | Proxmox VM host one                          |
 | BeeLink SER3            | 1     | 500GB SSD + 120GB NVMe   | Proxmox VM host Two                          |
+## :open_file_folder: Appication Services
 
 ## :lock:&nbsp; Security
 No hostnames or passwords are kept in this repository.
