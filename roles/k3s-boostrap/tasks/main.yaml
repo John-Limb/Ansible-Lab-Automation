@@ -1,0 +1,17 @@
+---
+- name: Prep hosts
+  block:
+   - name: prep hosts
+      include_tasks: prep-hosts.yaml
+
+- name: Bootstrap Cluster - primary node
+  when: main == 1 
+  block:
+    - name: bootstrap primary master
+       include_tasks: k3s-bootstrap.yaml
+
+- name: Bootstrap Cluster - secondary nodes
+  when: main == 2
+  block:
+   - name: bootstrap secondary masters
+      include_tasks: k3s-masters2.yaml

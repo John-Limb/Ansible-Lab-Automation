@@ -1,0 +1,65 @@
+### A simple automation to install K3s using K3Sup with ansible. 
+### Ability to fix to a certain version of K3s
+### Tested and working on Vm's hosted on proxmox with one network interface.. 
+### Create a temp keypair for installation 
+---
+### Generate Scripts for installation      
+    - name: generate helper script locally
+      become: false
+      template:
+        src: templates/install_master.j2
+        dest: /tmp/install_master.sh
+        mode: '0770'
+      when: main == 1
+      delegate_to: localhost
+### Grab K3 sup installer      
+    - name: Fetch k3sup setup
+      get_url:
+        url: 'https://get.k3sup.dev'
+        dest: /usr/local/bin/getk3sup.sh
+        mode: 493
+      become: 'yes'
+      register: fetchgetk3sup   
+      when: main == 1
+      delegate_to: localhost
+### Install the binary      
+    - name: Install k3sup binary
+      when: fetchgetk3sup is succeeded and main == 1
+      command: /usr/local/bin/getk3sup.sh
+      become: 'yes'
+      register: installk3sup
+      delegate_to: localhost
+### Check if we already have K3s installed      
+    - name: check if already installed on msater hosts
+      stat:
+        path: /usr/local/bin/k3s-uninstall.sh
+      register: stat_result
+### Run the K3 installer against master node number 1      
+    - name: run k3sup helper script for master
+      become: false
+      shell: sh /tmp/install_master.sh
+      when: main == 1 and stat_result.stat.exists == false
+      register: output2
+      delegate_to: localhost
+### Copy the KubeVIP RBAC into first master node      
+    - name: Copy vip rbac manifest to first master
+      template: null
+      src: templates/kube-vip-rbac.yaml.j2
+      dest: /var/lib/rancher/k3s/server/manifests/kube-vip-rbac.yaml
+      owner: root
+      group: root
+      mode: 420
+      when: main == 1
+### Fetch script for installing KubeVIP      
+    - name: Copy KubeVIP sh into first master
+      become: true
+      template:
+        src: templates/kube-vip-install.j2
+        dest: /tmp/kube-vip-install.sh
+      mode: 504
+      when: main == 1
+### Run installer for KubeVIP      
+    - name: Run kube-vip-install
+      become: true
+      shell: sh /tmp/kube-vip-install.sh
+      when: main == 1

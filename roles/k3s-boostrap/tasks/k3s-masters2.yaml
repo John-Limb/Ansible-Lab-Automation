@@ -1,0 +1,16 @@
+### Copy installer script for seconday master nodes      
+    - name: generate helper script on master for secondary masters
+      become: false
+      template:
+        src: templates/install_secondarymaster.j2
+        dest: /tmp/install_secondarymaster.sh
+        mode: '0770'
+      when: main == 2
+      delegate_to: localhost
+### Run the installer for the secondary nodes       
+    - name: run k3sup helper script for slave
+      shell: sh /tmp/install_secondarymaster.sh
+      become: false
+      when: main == 2 and stat_result.stat.exists == false
+      register: output2
+      delegate_to: localhost
