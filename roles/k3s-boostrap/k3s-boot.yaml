@@ -28,8 +28,8 @@
       name: ['nfs-common']
       state: latest
 #### SSH Key install
-  - name: check if already installed
-    stat:
+   - name: check if already installed
+     stat:
      path: /tmp/id_rsa_boot_k3s
     delegate_to: localhost
     become: false
