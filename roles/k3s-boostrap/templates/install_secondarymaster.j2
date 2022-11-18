@@ -1,0 +1,7 @@
+K3sup join \
+	--host={{ ansible_host }} \
+	--server-user={{ ansible_user }} \
+    --server-host= {{ master_ip }}
+    --user= {{ ansible_user }}
+	--server \
+	--k3s-extra-args="--disable servicelb,traefik --node-taint node-role.kubernetes.io/master=true:NoSchedule"

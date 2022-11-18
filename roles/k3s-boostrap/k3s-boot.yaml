@@ -53,7 +53,7 @@
     copy:
       src: /tmp/id_rsa_boot_k3s.pub
       dest: ~/.ssh/id_rsa.pub
-
+### copy keys to servers
   - name: add pubkey to servers
     become: false
     ansible.posix.authorized_key:
@@ -63,7 +63,7 @@
       path: "/home/{{ ansible_user }}/.ssh/authorized_keys"
       manage_dir: true
     register: output
-
+### set debug
   - name: debug
     debug: msg="{{ output }} 
 ### Generate an install script from template
@@ -122,7 +122,7 @@
     group: root
     mode: 0644
   when: main == 1
-
+### copy KubeVIP installer  
 - name: Copy KubeVIP sh into first master
   become: true
   template:
@@ -130,16 +130,15 @@
     dest: /tmp/kube-vip-install.sh
     mode: 0770
   when: main == 1
-
+### Run KubeVIP installer  
 - name: Run kube-vip-install
   become: true
   shell: sh /tmp/kube-vip-install.sh
   when: main == 1
-
 ### Now install other master servers
   - name: run k3sup helper script for slave
     shell: "sh /tmp/install_secondarymaster.sh"
     become: false
     when: main == 2 and stat_result.stat.exists == false
     register: output2
-    delegate_to: localhost
+    delegate_to: localhost    
