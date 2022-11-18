@@ -1,5 +1,5 @@
 ### A simple automation to install K3s using K3Sup with ansible. 
-### Ability to fix to a certain version of K3s is needed to keep builds consistant and ensure all services work as intended (longhorn)
+### Ability to fix to a certain version of K3s
 ### Tested and working on Vm's hosted on proxmox with one network interface.. 
 ### Create a temp keypair for installation 
 ---
@@ -18,19 +18,19 @@
       state: "latest"
       update_cache: true
 
-  - name: install curl
-    apt:
+   - name: install curl
+     apt:
       name: ['curl']
       state: latest
 
-  - name: install nfs-common
-    apt:
-     name: ['nfs-common']
-     state: latest
+   - name: install nfs-common
+     apt:
+      name: ['nfs-common']
+      state: latest
 #### SSH Key install
   - name: check if already installed
     stat:
-      path: /tmp/id_rsa_boot_k3s
+     path: /tmp/id_rsa_boot_k3s
     delegate_to: localhost
     become: false
     register: keypair_stat_result
@@ -38,7 +38,7 @@
   - name: Generate an OpenSSH keypair with the default values (4096 bits, rsa)
     become: false
     community.crypto.openssh_keypair:
-      path: /tmp/id_rsa_boot_k3s
+     path: /tmp/id_rsa_boot_k3s
     delegate_to: localhost
     when: keypair_stat_result.stat.exists == false
       
