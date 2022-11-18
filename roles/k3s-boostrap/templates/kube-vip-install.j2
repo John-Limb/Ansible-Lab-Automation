@@ -1,0 +1,10 @@
+ctr run --rm --net-host docker.io/plndr/kube-vip:latest vip /kube-vip \
+manifest daemonset \
+    --arp \
+    --interface {{ Interface }} \
+    --address {{ master_ip }} \
+    --controlplane \
+    --leaderElection \
+    --taint \
+    --services \
+    --inCluster | tee /var/lib/rancher/k3s/server/manifests/kube-vip.yaml

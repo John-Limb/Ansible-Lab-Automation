@@ -1,0 +1,4 @@
+[k3s-master]
+s-k3s-1-m ansible_host=AN ip ansible_user=AN user main=1 master_ip= AN IP for your VIP Interface= ens18 bootstrap_master_name= first master name
+s-k3s-2-m ansible_host=AN ip ansible_user=AN user main=2 master_ip= AN IP for your VIP Interface= ens18 bootstrap_master_name= first master name
+s-k3s-3-m ansible_host=AN ip ansible_user=AN user main=2 master_ip= AN IP for your VIP Interface= ens18 bootstrap_master_name= first master name

@@ -1,0 +1,146 @@
+### A simple automation to install K3s using K3Sup with ansible. 
+### Ability to fix to a certain version of K3s is needed to keep builds consistant and ensure all services work as intended (longhorn)
+### Tested and working on Vm's hosted on proxmox with one network interface.. 
+### Create a temp keypair for installation 
+---
+- name: Bootstrap K3s - master
+  hosts: K3s-master
+  become: true
+  become_user: root
+  serial: 1 
+  vars:
+   k3s-version:
+  tasks:
+### update packages and install prereqs
+   - name: update packages
+    apt: 
+      name: "*"
+      state: "latest"
+      update_cache: true
+
+  - name: install curl
+    apt:
+      name: ['curl']
+      state: latest
+
+  - name: install nfs-common
+    apt:
+     name: ['nfs-common']
+     state: latest
+#### SSH Key install
+  - name: check if already installed
+    stat:
+      path: /tmp/id_rsa_boot_k3s
+    delegate_to: localhost
+    become: false
+    register: keypair_stat_result
+
+  - name: Generate an OpenSSH keypair with the default values (4096 bits, rsa)
+    become: false
+    community.crypto.openssh_keypair:
+      path: /tmp/id_rsa_boot_k3s
+    delegate_to: localhost
+    when: keypair_stat_result.stat.exists == false
+      
+  - name: upload keypair to master
+    become: false
+    copy:
+      src: /tmp/id_rsa_boot_k3s
+      dest: ~/.ssh/id_rsa
+
+  - name: upload keypair to master
+    become: false
+    copy:
+      src: /tmp/id_rsa_boot_k3s.pub
+      dest: ~/.ssh/id_rsa.pub
+
+  - name: add pubkey to servers
+    become: false
+    ansible.posix.authorized_key:
+      user: "{{ ansible_user }}"
+      state: present
+      key: "{{ lookup('file', '/tmp/id_rsa_boot_k3s.pub') }}"
+      path: "/home/{{ ansible_user }}/.ssh/authorized_keys"
+      manage_dir: true
+    register: output
+
+  - name: debug
+    debug: msg="{{ output }} 
+### Generate an install script from template
+  - name: generate helper script locally
+    become: false
+    template:
+      src: templates/install_master.j2
+      dest: /tmp/install_master.sh
+      mode: '0770'
+    when: main == 1
+    delegate_to: localhost
+### Grab the K3s Boostrap tool
+  - name: Fetch k3sup setup
+    get_url:
+      url: https://get.k3sup.dev
+      dest: /usr/local/bin/getk3sup.sh
+      mode: 0755
+    become: yes
+    register: fetchgetk3sup
+    when: main == 1
+    delegate_to: localhost
+### install the Bootrap tool 
+  - name: Install k3sup binary
+    when: fetchgetk3sup is succeeded and main == 1
+    command: /usr/local/bin/getk3sup.sh
+    become: yes
+    register: installk3sup
+    delegate_to: localhost
+### Now generate a secondary master script for joining other masters to cluster
+  - name: generate helper script on master for secondary masters
+    become: false
+    template:
+      src: templates/install_secondarymaster.j2
+      dest: "/tmp/install_secondarymaster.sh"
+      mode: '0770'
+    when: main == 2
+    delegate_to: localhost
+### Check if we have K3s already installed
+  - name: check if already installed on msater hosts
+    stat:
+      path: /usr/local/bin/k3s-uninstall.sh
+    register: stat_result
+### Now we install K3s onto the first master node      
+  - name: run k3sup helper script for master
+    become: false
+    shell: sh /tmp/install_master.sh
+    when: main == 1 and stat_result.stat.exists == false
+    register: output2
+    delegate_to: localhost
+### Now we need to install KubeVIP
+- name: Copy vip rbac manifest to first master
+  template:
+    src: templates/kube-vip-rbac.yaml.j2
+    dest: "/var/lib/rancher/k3s/server/manifests/kube-vip-rbac.yaml"
+    owner: root
+    group: root
+    mode: 0644
+  when: main == 1
+
+- name: Copy KubeVIP sh into first master
+  become: true
+  template:
+    src: templates/kube-vip-install.j2
+    dest: /tmp/kube-vip-install.sh
+    mode: 0770
+  when: main == 1
+
+- name: Run kube-vip-install
+  become: true
+  shell: sh /tmp/kube-vip-install.sh
+  when: main == 1
+  
+### Now install other master servers
+  - name: run k3sup helper script for slave
+    shell: "sh /tmp/install_secondarymaster.sh"
+    become: false
+    when: main == 2 and stat_result.stat.exists == false
+    register: output2
+    delegate_to: localhost
+
