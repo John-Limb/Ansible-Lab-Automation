@@ -16,7 +16,8 @@ details, see the readme's in each folder.
 Using Ansible-Galaxy to form the template for each roles folder structure to keep structures to a standard, Ansible semaphore is used to automate patching using templated jobs.
 * [Ansible](roles/) roles for additional configuration and application installation > Top level playbooks are in the top level of this repository.
 * [Apps](Apps/) YAML files for configuation and deployment off applications into kubernetes
-* [Core-Services](roles/core-services/) Configurations for the core setup of the cluster
+* [Core-Services](roles/core-services/) Configurations for the further setup of the cluster after bootsrap
+* [BootStrap](roles/k3s-boostrap/) playbooks and shell scripts to provision a HA cluster of kubernetes master nodes
 
 ## :computer: Gear  
 I try to run everything bare metal with virtual machines (running on Proxmox).
@@ -41,6 +42,6 @@ Application YAML is also check and validated by [Datree](https://github.com/mark
 I learned a lot from the people over @ 
 [Awesome-home-kubernetes](https://github.com/k8s-at-home/awesome-home-kubernetes)
 and from the [k8s@home discord channel](https://discord.gg/DNCynrJ).
-[K3Sup](https://github.com/alexellis/k3sup) - Used to boot strap clusters
-[Longhorn](https://longhorn.io/)
-[ArgoCD](https://argo-cd.readthedocs.io/en/stable/)
+[K3Sup](https://github.com/alexellis/k3sup) - Used to bootstrap clusters
+[Longhorn](https://longhorn.io/) - Used as CSI driver for pod persistent storage
+[ArgoCD](https://argo-cd.readthedocs.io/en/stable/) - Used for application creation and lifecycle management

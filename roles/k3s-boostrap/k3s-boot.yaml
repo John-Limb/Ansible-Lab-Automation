@@ -13,7 +13,7 @@
   tasks:
 ### update packages and install prereqs
    - name: update packages
-    apt: 
+     apt: 
       name: "*"
       state: "latest"
       update_cache: true
@@ -135,7 +135,7 @@
   become: true
   shell: sh /tmp/kube-vip-install.sh
   when: main == 1
-  
+
 ### Now install other master servers
   - name: run k3sup helper script for slave
     shell: "sh /tmp/install_secondarymaster.sh"
@@ -143,4 +143,3 @@
     when: main == 2 and stat_result.stat.exists == false
     register: output2
     delegate_to: localhost
-
