@@ -39,7 +39,7 @@ I try to run everything bare metal with virtual machines (running on Proxmox).
 
 A. Virtual machines run ubuntu 22.04.
 B. K3S cluster consists of 3 Master nodes and 2 worker nodes.
-C. Block storage for Nodes is handled by Longhorn. 
+C. Block storage for Nodes is handled by Longhorn.
 D. Application deployment is handled by ArgoCD.
 
 ## :lock:&nbsp; Security/Secrets
@@ -53,10 +53,11 @@ Application YAML is also check and validated by [Datree](https://github.com/mark
 
 ## :handshake:&nbsp; Thanks and Links
 
-I learned a lot from the people over @ 
+I learned a lot from the people over @
 [Awesome-home-kubernetes](https://github.com/k8s-at-home/awesome-home-kubernetes)
 and from the [k8s@home discord channel](https://discord.gg/DNCynrJ).
-[K3Sup](https://github.com/alexellis/k3sup) - Used to bootstrap clusters
-[Longhorn](https://longhorn.io/) - Used as CSI driver for pod persistent storage
-[ArgoCD](https://argo-cd.readthedocs.io/en/stable/) - Used for application creation and lifecycle management.
-[EOF]
+
+* [K3Sup](https://github.com/alexellis/k3sup) - Used to bootstrap clusters.
+* [Longhorn](https://longhorn.io/) - Used as CSI driver for pod persistent storage.
+* [ArgoCD](https://argo-cd.readthedocs.io/en/stable/) - Used for application creation and lifecycle management.
+* [Terraform](https://www.terraform.io/) - Used to provision Virtual machines within proxmox.
