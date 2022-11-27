@@ -1,4 +1,5 @@
 variable "proxmox_host" {
+    type = string
     default = "srv-pve1"
 }
 variable "vm_id" {
@@ -12,6 +13,7 @@ variable "clone_id" {
     default = "Ubuntu-Template"
 }
 variable "Description" {
+    type = string
     default = "tf built"
 }
 
@@ -25,5 +27,6 @@ variable "template_full_clone" {
   default     = true
 }
 variable "howmany" {
+    type = number
     default = 1  
 }
