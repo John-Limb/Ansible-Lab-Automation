@@ -7,8 +7,14 @@ resource "proxmox_vm_qemu" "tf-vm" {
     count = var.howmany
     target_node = var.proxmox_host
     vmid = var.vm_id
-    name = "var.vm_name-${count.index}"
-    desc = var.Description
+    name = var.vm_name[count.index+1]
+    desc = <<-EOT
+    ------------------------------------------------------
+    OS Type:     ${var.Description}
+    Created at:  ${formatdate("EEE DD/MM/YYYY hh'h'mm AA (ZZZ)", timestamp())}
+    Created by:  Terraform
+    ------------------------------------------------------
+    EOT
     full_clone = var.template_full_clone
 
     # VM Advanced General Settings
