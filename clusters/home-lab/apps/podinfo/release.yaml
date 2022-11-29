@@ -9,6 +9,8 @@ spec:
     spec:
       chart: podinfo
       version: '4.0.1'
-      name: podinfo
-      namespace: flux-system
-    interval: 5m
+      sourceRef:
+        name: podinfo
+        kind: HelmRepository
+        namespace: flux-system
+      interval: 1m
