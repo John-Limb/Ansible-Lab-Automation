@@ -44,7 +44,7 @@ D. Application deployment is handled by Flux.
 
 ## :lock:&nbsp; Security/Secrets
 
-No hostnames or passwords are kept in this repository.
+Secrets are encrypted with SOPS where only myself and flux can read said secrets.
 
 ## :white_check_mark:&nbsp; linting and code scanning
 
