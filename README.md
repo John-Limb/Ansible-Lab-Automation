@@ -40,7 +40,7 @@ I try to run everything bare metal with virtual machines (running on Proxmox).
 A. Virtual machines run ubuntu 22.04.
 B. K3S cluster consists of 3 Master nodes and 2 worker nodes.
 C. Block storage for Nodes is handled by Longhorn.
-D. Application deployment is handled by ArgoCD.
+D. Application deployment is handled by Flux.
 
 ## :lock:&nbsp; Security/Secrets
 
@@ -59,5 +59,5 @@ and from the [k8s@home discord channel](https://discord.gg/DNCynrJ).
 
 * [K3Sup](https://github.com/alexellis/k3sup) - Used to bootstrap clusters.
 * [Longhorn](https://longhorn.io/) - Used as CSI driver for pod persistent storage.
-* [ArgoCD](https://argo-cd.readthedocs.io/en/stable/) - Used for application creation and lifecycle management.
+* [flux](https://fluxcd.io/) - Used for application creation and lifecycle management.
 * [Terraform](https://www.terraform.io/) - Used to provision Virtual machines within proxmox.
