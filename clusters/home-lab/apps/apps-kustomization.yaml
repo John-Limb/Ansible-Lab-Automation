@@ -20,6 +20,3 @@ spec:
       - kind: ConfigMap
         name: cluster-vars
         optional: false
-      - kind: Secret
-        name: cluster-secrets-vars
-        optional: false
