@@ -9,24 +9,24 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`heimdall.${SECRET_INT_DOMAIN}`)
+    - match: Host(`heimdall.${secret-int-domain}`)
       kind: Rule
       services:
         - name: heimdall-service
           port: 80
   tls:
-    secretName: prod-heimdall-${SECRET_INT_CERT_DOMAIN}
+    secretName: prod-heimdall-${secret-int-cert-domain}
 ---
     apiVersion: cert-manager.io/v1
     kind: Certificate
     metadata:
-      name: heimdall.${SECRET_INT_DOMAIN}
+      name: heimdall.${secret-int-domain}
       namespace: heimdall
     spec:
-      secretName: prod-heimdall-${SECRET_INT_CERT_DOMAIN}
+      secretName: prod-heimdall-${secret-int-cert-domain}
       issuerRef:
         name: letsencrypt-production
         kind: ClusterIssuer
-      commonName: "heimdall.${SECRET_INT_DOMAIN}"
+      commonName: "heimdall.${secret-int-domain}"
       dnsNames:
-      - "heimdall.${SECRET_INT_DOMAIN}"
+      - "heimdall.${secret-int-domain}"

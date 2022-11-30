@@ -24,9 +24,9 @@ spec:
       - name: heimdall  # < linkname of the volume for the pvc
         persistentVolumeClaim:
           claimName: heimdall # < pvc name we created in the previous yaml
-      - name: prod-heimdall-${SECRET_INT_CERT_DOMAIN}
+      - name: prod-heimdall-${secret-int-cert-domain}
         secret:
-          secretName: prod-heimdall-${SECRET_INT_CERT_DOMAIN} # < the name ssl certificate, will be created in the ingress yaml
+          secretName: prod-heimdall-${secret-int-cert-domain} # < the name ssl certificate, will be created in the ingress yaml
       containers:
       - image: ghcr.io/linuxserver/heimdall:v2.4.13-ls188 # < the name of the docker image we will use
         name: heimdall                      # < name of container
