@@ -30,3 +30,4 @@ spec:
       commonName: "heimdall.${secret_int_domain}"
       dnsNames:
       - "heimdall.${secret_int_domain}"
+#random note
