@@ -16,10 +16,6 @@ spec:
      spec:
         containers:
          - name: guacd
-           image: guacamole/guacd:1.4.0
-           resources:
-             limits:
-               cpu: "150Mi"
-               memory: "100M"               
+           image: guacamole/guacd:1.4.0        
            ports:
            - containerPort: 4822
