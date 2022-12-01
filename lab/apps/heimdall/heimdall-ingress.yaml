@@ -29,4 +29,4 @@ spec:
         kind: ClusterIssuer
       commonName: "heimdall.${SECRET_INT_DOMAIN}"
       dnsNames:
-      - "heimdall.${SECRET_INT_DOMAIN"
+      - "heimdall.${SECRET_INT_DOMAIN}"
