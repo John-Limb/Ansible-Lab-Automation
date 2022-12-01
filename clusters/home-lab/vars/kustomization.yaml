@@ -3,3 +3,7 @@ kind: Kustomization
 resources:
 - cluster-secret-vars.sops.yaml
 - cluster-vars.yaml
+decryption:
+    provider: sops
+    secretRef:
+      name: sops-age
