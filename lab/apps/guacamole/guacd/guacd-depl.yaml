@@ -18,7 +18,7 @@ spec:
          - name: guacd
            image: guacamole/guacd:1.4.0
            resources:
-             requests:
+             limits:
                cpu: "32M"
                memory: "32Mi"               
            ports:
