@@ -19,7 +19,7 @@ spec:
            image: guacamole/guacd:1.4.0
            resources:
              requests:
-               cpu: "50M"
+               cpu: "32M"
                memory: "32Mi"               
            ports:
            - containerPort: 4822
