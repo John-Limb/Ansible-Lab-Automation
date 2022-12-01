@@ -6,3 +6,6 @@ resources:
  - heimdall-storage.yaml
  - heimdall-service.yaml
  - heimdall-ingress.yaml
+commonLabels:
+  app.kubernetes.io/name: heimdall
+  app.kubernetes.io/instance: heimdall
