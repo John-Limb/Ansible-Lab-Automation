@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: guacamole-conf
+    namespace: guacamole
+data:
+    user-mapping.xml: ENC[AES256_GCM,data:77Aw4dg9mEZcGbTXG41tIa34Yd1n2nBg9vNi1R+ptol9Ptj8ozdsydHMvG0+ByL4kwnelT3L0SBthmEFiadAWLN/iMDKWl1jXS0u4JqHleyEfNviVOSBOhJ017RDxVB3MLYjqP0jNMQwwwDScxN5/5aBjxLwtxADuddZwc3UgmqVyWlLdArMIF4wJVeTsgkEI70fz0yUVkjZREpxP/n3ZcThlVVQyOo69vH7sJO7uYyI/DUtbhqnVXgLGfBXL8/CxeOGGLXFr5ImZUyKgRMizRkj8EkZjzJtztx72yfFSoTZAh4hxMMQxPy/okEm7+X7PW46+uX/7cHlyWHQvw5EV9Tugs8SvNZav8gehBmQz+1ew0VuOM0I0T3oBLRgVnd23DyLJ2lqPIab7CHckSTrGuLy6fYFBtr6n2EXq+Kythx10hUaPe8/GC4scLTBiFxpj9Y4NMVQmT83l4BF6qOUexIeGLxo+OzmCWkJwgf/wq8a6uWCB0V+dpodI4mYdTm98sCImThfGDgbNUYqsxYkJ5ZIWZbGDnGRfHPfIrwR04QYYAfijEnCwocGe0ZKahKTDSgR/b8OAuMc0KnMj3U3yq/J6G4NlR6vNteyoTZoC0QS9SAstyyrTL82mQQeupAwtCss1OtsO4iuVumQhUqDVqdXmRABcxMDAEip15PJfASIR05JmujA0XePJlluO1kZ7PmFvC+5bhoAKpmoFdRbdbOq,iv:tmFdftLi2/D5Hedd7wWvX9RK49ElToMI4H0q+2MLgIE=,tag:P4lHkHNytcZuFxodU9jGHg==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1a0q20utj6v2s7tajn7l8kwua0ga0aqple75mpvqfjt40t3za7fsqecmmxc
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBJM3BiYVlZQURHNVRNQm9X
+            dGZqMEhrL2RnTHdvUlNONFlwMVJPMHVTd3hVCmEwN3MyaGhCOW80WUJLN3RzVkZp
+            U0dnODdaOFZ4SXJMc3JoaTNqZjNxVGcKLS0tIGdMbWZ1NWE2RHRDcWkwUnV5TEZl
+            aDY2V0xGeG95ZmpuZm01VHh6YlFpNHcKPrh25iXJnf8yP0iz6+UZh3LymTdBLK7b
+            XLFmGLKQsjzfiR84P99WqhC7Stegh+xRluwo3i0pOAXdNX7S1EuS4A==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2022-12-01T21:32:19Z"
+    mac: ENC[AES256_GCM,data:BIYAJJuA8G44m4zZa9f3LsCH4YP7qOMGWEoRPDJwLMeU+xp0w/j4mQeR3w4GBGdeI8Q+8gKam5qMAVD1l8UyKmaO9pUFSO2cDWdaTDKNW4aaIlAt3JPMwrgtmqgl/69HS0jgThbZfhIYpCR5wEDtmn0JPsfWXO+k4Xg/IDkaMaA=,iv:jN4Op4YBza7vnLv69jej/XxQvk1WvK80PHCMlTtUBEU=,tag:ca+F17iu7K5/suP4i47bxQ==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3

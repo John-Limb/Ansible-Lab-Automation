@@ -1,0 +1,43 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: guacamole
+  namespace: guacamole
+  annotations: 
+    kubernetes.io/ingress.class: traefik-external
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`guacamole.${SECRET_INT_DOMAIN}`)
+      kind: Rule
+      services:
+        - name: guacamole-svc
+          port: 8080
+      middlewares:
+        - name: prepend-path-guacamole
+  tls:
+    secretName: prod-guacamole-${SECRET_INT_CERT_DOMAIN}
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: prepend-path-guacamole
+spec:
+  addPrefix:
+    prefix: /guacamole
+---
+    apiVersion: cert-manager.io/v1
+    kind: Certificate
+    metadata:
+      name: guacamole.${SECRET_INT_DOMAIN}
+      namespace: guacamole
+    spec:
+      secretName: prod-guacamole-${SECRET_INT_CERT_DOMAIN}
+      issuerRef:
+        name: letsencrypt-production
+        kind: ClusterIssuer
+      commonName: "guacamole.${SECRET_INT_DOMAIN}"
+      dnsNames:
+      - "guacamole.${SECRET_INT_DOMAIN}"
