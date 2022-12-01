@@ -41,13 +41,13 @@ spec:
           httpGet:
             path: /guacamole/
             port: 8080
-          initialDelaySeconds: 45
+          initialDelaySeconds: 90
           timeoutSeconds: 10
         readinessProbe:
           httpGet:
               path: /guacamole/
               port: 8080
-          initialDelaySeconds: 45
+          initialDelaySeconds: 90
           timeoutSeconds: 40
       volumes:
         - name: guacamole-conf
