@@ -6,3 +6,4 @@ metadata:
   name: cluster-vars
 data:
   TIMEZONE: "Europe/London"
+  LOCALE: "LONDON"
