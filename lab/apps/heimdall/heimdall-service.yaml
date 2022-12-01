@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: heimdall-service    # < name of the service
+  namespace: heimdall       # < namespace where place the deployment and pods
+spec:
+  selector:
+    app: heimdall           # < reference to the deployment (connects with this deployment)
+  ports:
+    - name: http-80
+      protocol: TCP
+      port: 80
+    - name: https-443
+      protocol: TCP
+      port: 443
