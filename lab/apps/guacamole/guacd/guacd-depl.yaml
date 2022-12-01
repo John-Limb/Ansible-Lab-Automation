@@ -18,11 +18,8 @@ spec:
          - name: guacd
            image: guacamole/guacd:1.4.0
            resources:
-             limits:
-               cpu: "100M"
-               memory: "128Mi"
              requests:
                cpu: "50M"
-               memory: "64Mi"               
+               memory: "32Mi"               
            ports:
            - containerPort: 4822
