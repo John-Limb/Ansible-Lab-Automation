@@ -27,13 +27,6 @@ spec:
             value: "4822"
           - name: GUACAMOLE_HOME
             value: /etc/guacamole/
-        resources:
-          limits:
-            memory: "512Mi"
-            cpu: "710M"
-          requests:
-            memory: "64Mi"
-            cpu: "250M"
         ports:
         - name: http
           containerPort: 8080
