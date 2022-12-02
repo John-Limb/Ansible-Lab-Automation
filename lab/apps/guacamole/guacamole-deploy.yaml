@@ -29,7 +29,7 @@ spec:
             value: /etc/guacamole/
         resources:
           limits:
-            memory: "100Mi"
+            memory: "250Mi"
             cpu: "50m"
         ports:
         - name: http
