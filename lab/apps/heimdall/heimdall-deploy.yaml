@@ -6,7 +6,7 @@ metadata:
   labels:
     app: heimdall       # < label for tagging and reference
 spec:
-  replicas: 2           # < number of pods to deploy
+  replicas: 1           # < number of pods to deploy
   selector:
     matchLabels:
       app: heimdall
@@ -33,10 +33,16 @@ spec:
         imagePullPolicy: Always  # < always use the latest image when creating container/pod
         resources:
           limits:
-            memory: "64Mi"
+            memory: "120Mi"
+            cpu: "150m"
           requests:
-            memory: "64Mi"
-            cpu: "100m"
+            memory: "120Mi"
+            cpu: "150m"
+        livenessProbe:
+          httpGet:
+            port: 443
+            scheme: HTTPS
+            path: / 
         env:                                # < the environment variables required (see container documentation)
         - name: PGID
           value: "100" # < group "user"
