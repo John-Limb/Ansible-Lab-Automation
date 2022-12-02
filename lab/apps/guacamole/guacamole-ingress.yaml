@@ -15,8 +15,6 @@ spec:
       services:
         - name: guacamole-svc
           port: 8080
-      middlewares:
-        - name: prepend-path-guacamole
   tls:
     secretName: prod-guacamole-${SECRET_INT_CERT_DOMAIN}
 ---
