@@ -38,11 +38,6 @@ spec:
           requests:
             memory: "120Mi"
             cpu: "150m"
-        livenessProbe:
-          httpGet:
-            port: 443
-            scheme: HTTPS
-            path: / 
         env:                                # < the environment variables required (see container documentation)
         - name: PGID
           value: "100" # < group "user"
