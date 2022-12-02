@@ -19,8 +19,8 @@ details, see the readme's in each folder.
 Using Ansible-Galaxy to form the template for each roles folder structure to keep structures to a standard, Ansible semaphore is used to automate patching using templated jobs.
 
 * [Ansible](roles/) roles for additional configuration and application installation > Top level playbooks are in the top level of this repository.
-* [Apps](Apps/) YAML files for configuation and deployment off applications into kubernetes
-* [Core-Services](roles/core-services/) Configurations for the further setup of the cluster after bootsrap
+* [Apps](lab/apps/) YAML files for configuation and deployment off applications into kubernetes
+* [Core-Services](roles/k3s-core-services/) Configurations for the further setup of the cluster after bootsrap
 * [BootStrap](roles/k3s-boostrap/) playbooks and shell scripts to provision a HA cluster of kubernetes master nodes
 
 ## :computer: Gear  
@@ -44,7 +44,7 @@ D. Application deployment is handled by Flux.
 
 ## :lock:&nbsp; Security/Secrets
 
-Secrets are encrypted with SOPS where only myself and flux can read said secrets.
+Secrets and configmaps with private data are encrypted with [sops](https://github.com/mozilla/sops) where only myself and flux can read said secrets.
 
 ## :white_check_mark:&nbsp; linting and code scanning
 
@@ -61,3 +61,4 @@ and from the [k8s@home discord channel](https://discord.gg/DNCynrJ).
 * [Longhorn](https://longhorn.io/) - Used as CSI driver for pod persistent storage.
 * [flux](https://fluxcd.io/) - Used for application creation and lifecycle management.
 * [Terraform](https://www.terraform.io/) - Used to provision Virtual machines within proxmox.
+* [sops](https://github.com/mozilla/sops)
