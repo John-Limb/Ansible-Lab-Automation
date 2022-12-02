@@ -4,6 +4,8 @@ kind: Deployment
 metadata:
   name: guacamole
   namespace: guacamole
+  annotations:
+    reloader.stakater.com/auto: "true"
 spec:
   selector:
     matchLabels:

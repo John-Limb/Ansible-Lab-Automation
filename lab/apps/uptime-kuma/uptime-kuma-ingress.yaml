@@ -1,0 +1,32 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: uptime-kuma-ingress
+  namespace: uptimekuma
+  annotations: 
+    kubernetes.io/ingress.class: traefik-external
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`uptime.${SECRET_INT_DOMAIN}`)
+      kind: Rule
+      services:
+        - name: uptime-kuma-service
+          port: 3001
+  tls:
+    secretName: prod-uptime-${SECRET_INT_CERT_DOMAIN}
+---
+    apiVersion: cert-manager.io/v1
+    kind: Certificate
+    metadata:
+      name: uptime.${SECRET_INT_DOMAIN}
+      namespace: uptimekuma
+    spec:
+      secretName: prod-uptime-${SECRET_INT_CERT_DOMAIN}
+      issuerRef:
+        name: letsencrypt-production
+        kind: ClusterIssuer
+      commonName: "uptime.${SECRET_INT_DOMAIN}"
+      dnsNames:
+      - "uptime.${SECRET_INT_DOMAIN}"
