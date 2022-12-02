@@ -20,15 +20,6 @@ spec:
   tls:
     secretName: prod-guacamole-${SECRET_INT_CERT_DOMAIN}
 ---
-apiVersion: traefik.containo.us/v1alpha1
-kind: Middleware
-metadata:
-  name: prepend-path-guacamole
-  namespace: traefik
-spec:
-  addPrefix:
-    prefix: /guacamole
----
     apiVersion: cert-manager.io/v1
     kind: Certificate
     metadata:
