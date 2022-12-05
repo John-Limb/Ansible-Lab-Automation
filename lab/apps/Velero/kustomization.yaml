@@ -5,3 +5,4 @@ resources:
 - Velero-namespace.yaml
 - helm-release.yaml
 - helm-repository.yaml
+- velero-crd.yaml
