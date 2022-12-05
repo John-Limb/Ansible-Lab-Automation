@@ -6,3 +6,4 @@ metadata:
   name: global-vars
 data:
   CLUSTER_NAME: "k3s-lab"
+  TZ: "Europe/London"

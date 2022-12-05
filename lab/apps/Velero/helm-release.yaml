@@ -31,6 +31,18 @@ spec:
         volumeMounts:
           - mountPath: /target
             name: plugins
+    credentials:
+     existingSecret: s3-velero-eu-west-2
+    configuration:
+      extraEnvVars:
+        TZ: "${TZ}"
+      provider: aws
+      backupStorageLocation:
+        name: default
+        bucket: home-lab-velero-backup
+        default: true
+        config:
+          region: eu-west-2
     resources:
       requests:
         memory: 300Mi
@@ -65,8 +77,4 @@ spec:
           ttl: 336h
           includedNamespaces:
            - uptimekuma
-           - heimdall
-  valuesFrom:
-    - kind: Secret
-      name: s3-velero-eu-west-2
-      optional: false
+           - heimdall 
