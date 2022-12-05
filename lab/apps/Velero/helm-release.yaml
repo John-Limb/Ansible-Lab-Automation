@@ -58,9 +58,6 @@ spec:
     restic:
       podVolumePath: /var/lib/kubelet/pods
       privileged: false
-      tolerations:
-        - key: node-role.kubernetes.io/master
-          operator: Exists
       resources:
         requests:
           memory: 200Mi
