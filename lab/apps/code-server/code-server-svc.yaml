@@ -10,5 +10,3 @@ spec:
   ports:
     - name: svc-ui
       port: 8443
-      targetPort: 8443
-      protocol: TCP

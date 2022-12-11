@@ -34,7 +34,6 @@ spec:
         ports:
           - name: svc-ui
             containerPort: 8443
-            protocol: TCP
         livenessProbe:
           httpGet:
             path: /healthz
