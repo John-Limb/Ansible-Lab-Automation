@@ -1,13 +1,15 @@
 ---
-apiVersion: v1
-kind: Service
+kind: Service 
+apiVersion: v1 
 metadata:
-  name: code-server-svc-ui
+  name: code-server-ui-svc
   namespace: code-server
 spec:
   selector:
     app: code-server
+  type: ClusterIP
   ports:
-    - name: svc-ui
-      port: 8469
+    - name: ui-svc
+      port: 80
       targetPort: 8443
+      protocol: TCP
