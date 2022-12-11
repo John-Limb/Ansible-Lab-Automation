@@ -15,7 +15,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: code-server-WS-pvc
+  name: code-server-ws-pvc
   namespace: code-server
 spec:
   accessModes:

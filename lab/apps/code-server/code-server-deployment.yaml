@@ -72,7 +72,7 @@ spec:
             claimName: code-server-config-pvc
          - name: code-server-ws
            persistentVolumeClaim:
-            claimName: code-server-WS-pvc
+            claimName: code-server-ws-pvc
          - name: code-server-dotfiles
            secret:
              secretName: code-server-dot-files
