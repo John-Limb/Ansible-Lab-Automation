@@ -4,8 +4,8 @@ metadata:
     name: code-server-secret
     namespace: code-server
 data:
-    PASSWORD: ENC[AES256_GCM,data:dBUf+QS8HpljVm699rw=,iv:+oQw7Ey8B6uXg1su4zUAZ/kD5JJQzqRHJBe+5dMJ/YI=,tag:Wu582n+Vq99TbUfNl4J24A==,type:str]
-    SUDO_PASSWORD: ENC[AES256_GCM,data:wJpEpuTZRM2nX0MQvVc=,iv:00lrxVKY20EEexH1Ve9UynRGr3JQpGQGKOgogiMnCgI=,tag:8kf4y/N3/30ut4RSeSS67g==,type:str]
+    PASSWORD: ENC[AES256_GCM,data:XRAZTnHzhefCm0lDPnx4b2Gknh4=,iv:P7Dn1N05zlgXZiL92KfmDVkI2FL2c8e48KWTgPVio5o=,tag:2dRFkyD+K1drnUsJtxReqw==,type:str]
+    SUDO_PASSWORD: ENC[AES256_GCM,data:wRL2Wa9pqx8b2u6DslXmOUYqPdc=,iv:tCAQg/3QRIfmt+mkscQGqTA4T44nCFF3L5EOpEIVaVo=,tag:FsMujbfHxDf7Zo7ba1fnsw==,type:str]
 sops:
     kms: []
     gcp_kms: []
@@ -21,8 +21,8 @@ sops:
             QTc0c2lWdGpybzZ4a21oZGYyNkk0NWMKPRjXUAipk/rnShtemT8HotJ7EH8u01a6
             3vS0Ft4VjsKSfPIxu7caANnhpFnBL6WmU3wysCprWrH+W8o6bZCkKw==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2022-12-11T11:52:52Z"
-    mac: ENC[AES256_GCM,data:bhLWtdRg/WR/xcLnek9080cWXGRYgKsWmYbkt9+YUIRtIguJmsy48IUazQ44/v7zss71sZA0MM13ldqFYWOp2HEcovIdZwvRW7W2VkDVCuzYYuf3Ri1aZoOQYebullkyPO6RO3wd1U4vDJDv8rw5sBmMRjl35CDIaSF6RGfAysM=,iv:8lb0K73JWADRZVC03WqFFSzVB2AiaTvYc3gUKCvUD+8=,tag:itHSWKh8Wb1Mk5KTeCPb/w==,type:str]
+    lastmodified: "2022-12-11T14:23:19Z"
+    mac: ENC[AES256_GCM,data:SF7aB7t+9sAGMIVCvUrSazUm6pr2Z2X5uJCZy/8FPTg3ylmwEoRQetfzpwrOgO/N59MER8rPfsCik67IlYvjbTF0lyELkeSAEbNZUGB7Vx8JpKU5yc4RbwaMyi41jTXT0sgPhKfsyrAx9M2tDTrNs7D2FtQgv8c9+eIKlyAm+eE=,iv:KnSnCkQ10lDx0MxdFlbN91qx++1hCQrqHIT5GQ5hy6I=,tag:iPOAvZY8wPCA008cc5w4kw==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.7.3
