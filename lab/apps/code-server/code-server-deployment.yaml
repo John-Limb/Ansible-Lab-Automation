@@ -66,16 +66,16 @@ spec:
             name: code-server-dotfiles
           - mountPath: /etc/ssh_keys
             name: code-server-ssh-keys
-        volumes:
-         - name: code-server-config
-           persistentVolumeClaim:
-             claimName: code-server-config-pvc
-         - name: code-server-ws
-           persistentVolumeClaim:
-             claimName: code-server-ws-pvc
-         - name: code-server-dotfiles
-           secret:
-             secretName: code-server-dot-files
-         - name: code-server-ssh-keys
-           secret:
-             secretName: code-server-ssh-keys
+      volumes:
+        - name: code-server-config
+          persistentVolumeClaim:
+            claimName: code-server-config-pvc
+        - name: code-server-ws
+          persistentVolumeClaim:
+            claimName: code-server-ws-pvc
+        - name: code-server-dotfiles
+          secret:
+            secretName: code-server-dot-files
+        - name: code-server-ssh-keys
+          secret:
+           secretName: code-server-ssh-keys
