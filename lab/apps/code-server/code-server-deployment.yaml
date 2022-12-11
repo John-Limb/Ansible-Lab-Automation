@@ -4,6 +4,8 @@ kind: Deployment
 metadata:
   name: code-server
   namespace: code-server
+  annotations:
+    reloader.stakater.com/auto: "true"
   labels:
     app: code-server
 spec:
