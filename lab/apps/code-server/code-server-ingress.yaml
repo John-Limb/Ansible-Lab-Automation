@@ -1,0 +1,32 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: code-server-ingress
+  namespace: code-server
+  annotations: 
+    kubernetes.io/ingress.class: traefik-external
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`code.${SECRET_INT_DOMAIN}`)
+      kind: Rule
+      services:
+        - name: code-service
+          port: 80
+  tls:
+    secretName: prod-code-${SECRET_INT_CERT_DOMAIN}
+---
+    apiVersion: cert-manager.io/v1
+    kind: Certificate
+    metadata:
+      name: code.${SECRET_INT_DOMAIN}
+      namespace: code-server
+    spec:
+      secretName: prod-code-${SECRET_INT_CERT_DOMAIN}
+      issuerRef:
+        name: letsencrypt-production
+        kind: ClusterIssuer
+      commonName: "code.${SECRET_INT_DOMAIN}"
+      dnsNames:
+      - "code.${SECRET_INT_DOMAIN}"
