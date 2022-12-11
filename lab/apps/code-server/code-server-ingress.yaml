@@ -13,7 +13,7 @@ spec:
       kind: Rule
       services:
         - name: ui-svc
-          port: 8443
+          port: 8469
   tls:
     secretName: prod-code-${SECRET_INT_CERT_DOMAIN}
 ---
