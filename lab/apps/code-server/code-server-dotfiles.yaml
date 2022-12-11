@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Secret
 metadata:
     name: code-server-dot-files
-    namespace: prod
+    namespace: code-server
 type: Opaque
 stringData:
     zshrc: ENC[AES256_GCM,data:K7EmJT7d/l3ez7nEHfb9iCe2avnVEl1mWCyawjHB6cTOSmNCgSaretfzUFAhBDZyLg5CtX+UEAMAbn3rVOwuv6BJl9XFHu+3BB4H9TyEch6CHtLzg+m+wNy61M75JQw48f4aPZoXhMn4ew4Di40Lj80sf5vk3DmVu+EuIXwPomH8uaRt56W86lCQWt27OJCqYWKtNbRJMaW61UJzJWC+lJHcG42nwwOeHUpo8HY2gFAnQ6wvHMCYxgIriWMadPgvyrIU8/tVy+inzc0K20KY0qDQp3aaUBDg34biRoPTiZPiXdpExJNs/jhQe7qiy/7MSM28e/n6/dtEHmbQPwiRr69y+x+R4aBjttvp3A8YgURlazp50evMCGOQtVq3X4P5FqqUTZloo4I8/D99Rdfo5sO56vv+BPZ4EvYhg0WarhU/H/syvm287rCOIg5WqsMp0SQcU8i4W9RPxD6OA9YLUKobiaqOaFqHnCwK0+zDGmh4hozL1uma+gzC1R11y/yr2Y9ML0bZq/PFlQT+CwxoaWBH7wpiw3uvLarBXF2TZ37a05S4hTW4I2rFxcn2uAj1mKSEqGL5NgmVuoD+GeGGtUedrZo=,iv:93E4nYN2DlZ9M6TiUL2Nzzm3GX3BEf8XSFpoPHuANS4=,tag:QrPPXGaqFEjIqh4o4crZyA==,type:str]
@@ -26,8 +26,8 @@ sops:
             Uk5BMGJyR3FualN0RDcrb3I4V0RKOVUK2VB/BTEq3ImuLUVjCAypcEgNWZ3h7Cw7
             PIcN1qp6k85RVfwD+WzI2YcYTwSwVvjt5EWg49a+HA0cOE45oPKTiA==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2022-12-11T13:38:42Z"
-    mac: ENC[AES256_GCM,data:pV7/9vKKwy/T5S5ZWQOfMFpvbCPOoh/SJukPk8o7wHRtTjQGtF27o39J0To3/GPB+YvHI5XVy3lQuqtyMAHnBI/tzikwelBlWT5ZA5JxdEtgpHKSl6Vu8OMhnrr2fAe+DgCMkS51UVgI8Kl6urrQKy1QK1goGbQnriq0oKDqU6Y=,iv:+GQH+edlRax0DCHpww2MvTPv6+kzHUvVMD/AdAlygpc=,tag:om9FSxYbwpFZzNlCJSXskw==,type:str]
+    lastmodified: "2022-12-11T14:25:49Z"
+    mac: ENC[AES256_GCM,data:kg6SKzdS+6XxMUwvq7TIPLPC9fabKVL8L940zNT1YI+8PvrQ5TMyTYsbbi9ZXLxe4GyurA5EbrYSufhZ58BFTzNq8Y8ItvX7RXcBcHzouhio3JYt9h6W5HF5GzE0t2q+B/71hMHhYeTy9rI5cvrkU9rdSuOOE0NrZenS9WvLwys=,iv:wnZJltb9ylSwxcaU13Ss2FQ5Oqsubgs3iKDOnhWUZzk=,tag:XFOXRzJ7OETXUoiv2h0fmQ==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.7.3
