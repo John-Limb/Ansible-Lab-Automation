@@ -4,30 +4,10 @@ metadata:
     name: code-server-configmap
     namespace: code-server
 data:
-    PUID: ENC[AES256_GCM,data:ETU+YQ==,iv:h7juCDCon6sYAKaixZQUWIO/3G7qsLaEFstRWRynZDM=,tag:9kqU0nbdewzwBw9Wi1WLuQ==,type:str]
-    PGID: ENC[AES256_GCM,data:sbV+aQ==,iv:LKTjpk0VeRPDhVf1FO0Gvu+aLOw52bHeJsPrKY8xZrM=,tag:9ffyXLZssCt/Xnezx4K59A==,type:str]
-    TZ: ENC[AES256_GCM,data:onwCGEeVTh88eJatEQ==,iv:9BJuOqfhpab9GHAeFQtkBHXzX+igXUj8RA8WVhdjoII=,tag:CGEH1p1tjxI/S3wpUytSJw==,type:str]
-    proxy_domain: ENC[AES256_GCM,data:A2liQdXt0d5M5yHjubZuXq63L6OB/A==,iv:rqElToGIfvxnc34aLt0cZ247/A0zH2x17wDGbnUkVO4=,tag:xu+FoxfORl9xv06m3oH5wQ==,type:str]
-    default_workspace: ENC[AES256_GCM,data:0VCkz9FXpi6deQ==,iv:vu5yBnAiivVzH32lMJhZ0XycND3yXGJ+n4FcyS8SbB0=,tag:b5tzVXhH9/PWs4LXB+CrCA==,type:str]
-    DOCKER_MODS: ENC[AES256_GCM,data:LQ5xFws3iI6CgFAA/7tD74EUdiR1qoblY+8pP4UWGiyHMchkywtFl4wimd2uL5SNOZDAIqEDlj9U9w+YA487PuRglFX2sofW+VzTENv/RY85AWAlPLz97RaR4Sa/NvmBjt6zYBXSDDpXq1T7T/MFTSXFexwNT0sXTqRkkLUQiSM71lg9/Zdpc3MzwBuH7NBGkrn1zAYWUnU82HUAGHPHkQbBv07aS+S7,iv:kJ5gXse+IHNlmmsfDBO5RrEFPH2NsRr61CiXW3KCxW4=,tag:LVcls6tNB+uD/7TTkseLQg==,type:str]
-    VSCODE_EXTENSION_IDS: ENC[AES256_GCM,data:RKXbJdi0w3l102xNNEZCEUEwGL/VypM+hM3oPGXkOq/tvAXAnD01HT2cJnpo1M+yJSIb6Sx2g+GLHqwvQdRdUVr+r32EWyiu7t85Q3M035PdKe3o+pNCv6KODa5CfX6Fd8yR/z9nwSHOC3Fnuve4YsHvRG9if/HpwLnJ/tu9PbahokSG4Wn6jHs8VL3vJ/4HAUqOdxlM6jYcargBUywbPv8cD+I5W3WkhIlTuDqqqQnkFNtTCRscxXinVt+IDm8xAvb/HsxfuPT9Nv+NJI8dPg/8eTmpMflJOA==,iv:kGFh3viDc1GU7o40JI3QulVxK2fBF3fBnrYE8ZikG3s=,tag:PfRUw746PPjH8RVDSt1kew==,type:str]
-sops:
-    kms: []
-    gcp_kms: []
-    azure_kv: []
-    hc_vault: []
-    age:
-        - recipient: age1a0q20utj6v2s7tajn7l8kwua0ga0aqple75mpvqfjt40t3za7fsqecmmxc
-          enc: |
-            -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBkZWJzbDI4L0J0cXZvYS8y
-            bEh3TWU1Tm9RRTN0c3hSb3YrUXRLbXZKYkJnCjAzSFZoKzQ2NVFPajVoSlpDQTU3
-            V0NqTW9zU1FBeWQyUnRuVE1TMXFVZjQKLS0tIDEwcnpwdXg0d0N5QUp2VE8vZkJp
-            d1dVc1BoZXpVOTdsTkhBZ1V4dlNUb28KlCcCIWeLg1d5KDPvcTS6USSYqYsjGC8f
-            iLrJl6ezKcoMiyIbmHBgkC1kKk5bAct7ThHuPGc9ciKhbBFCs9UT/Q==
-            -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2022-12-11T13:17:54Z"
-    mac: ENC[AES256_GCM,data:gdUaREWh0Q4BODWMzjuMGBKG8IHF9buetONE3jaK7m/hCKsQpsBGsmtpXC/oriDEDoCb3fpxXZ6Rm5/6ExuI2xPHnbs4p0WlB7at0BcKVaMfWhicBbV+Tk1BxnNYLc1+s01MxxNr+3MRP+GDgUpYO3zHItyXC36HmCToPjJ+8Gs=,iv:esWsak9eq5giW3YK50nvtEW/e0ov3sO8izi+sHh1uCE=,tag:dIEHRbO7YyyCEfrzBY8bWw==,type:str]
-    pgp: []
-    encrypted_regex: ^(data|stringData)$
-    version: 3.7.3
+    PUID: "1000"
+    PGID: "1000"
+    TZ: London/Europe
+    proxy_domain: code.${SECRET_INT_DOMAIN}
+    default_workspace: /workspace
+    DOCKER_MODS: linuxserver/mods:code-server-extension-arguments|ghcr.io/ivanmorenoj/lsio-mods:code-server-ws|linuxserver/mods:code-server-awscli|linuxserver/mods:code-server-terraform
+    VSCODE_EXTENSION_IDS: vscodevim.vim|streetsidesoftware.code-spell-checker|mhutchie.git-graph|ms-kubernetes-tools.vscode-kubernetes-tools|redhat.vscode-yaml|vscode-icons-team.vscode-icons|eamodio.gitlens|signageos.signageos-vscode-sops-beta
