@@ -13,7 +13,7 @@ spec:
       kind: Rule
       services:
         - name: code-service
-          port: 80
+          port: 8443
   tls:
     secretName: prod-code-${SECRET_INT_CERT_DOMAIN}
 ---
