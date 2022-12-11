@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: code-server-ui-svc
+  namespace: code-server
+spec:
+  selector:
+    app: code-server
+  ports:
+    - name: ui-svc
+      port: 8443
+      targetPort: 8443
+      protocol: TCP

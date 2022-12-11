@@ -1,0 +1,81 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: code-server
+  namespace: code-server
+  labels:
+    app: code-server
+spec:
+  selector:
+    matchLabels:
+      app: code-server
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: code-server
+    spec:
+      containers:
+      - name: code-server
+        image: linuxserver/code-server:4.9.0
+        imagePullPolicy: Always
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+        envFrom:
+          - configMapRef:
+              name: code-server-configmap
+          - secretRef:
+              name: code-server-secret
+        ports:
+          - name: svc-ui
+            containerPort: 8443
+            protocol: TCP
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: svc-ui
+          initialDelaySeconds: 10
+          periodSeconds: 5
+        readinessProbe:
+          httpGet:
+            path: /healthz
+            port: svc-ui
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          failureThreshold: 10
+        startupProbe:
+          httpGet:
+            path: /healthz
+            port: svc-ui
+          failureThreshold: 90
+          initialDelaySeconds: 10
+          periodSeconds: 15
+          successThreshold: 1
+          timeoutSeconds: 5
+        volumeMounts:
+          - mountPath: /config
+            name: code-server-config
+          - mountPath: /workspace
+            name: code-server-ws
+          - mountPath: /etc/dot_files
+            name: code-server-dotfiles
+          - mountPath: /etc/ssh_keys
+            name: code-server-ssh-keys
+        volumes:
+         - name: code-server-config
+           persistentVolumeClaim:
+            claimName: code-server-config-pvc
+         - name: code-server-ws
+           persistentVolumeClaim:
+            claimName: code-server-WS-pvc
+         - name: code-server-dotfiles
+           secret:
+             secretName: code-server-dot-files
+         - name: code-server-ssh-keys
+           secret:
+            secretName: code-server-ssh-keys

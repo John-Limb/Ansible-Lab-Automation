@@ -1,0 +1,11 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- code-server-config.yaml
+- code-server-deployment.yaml
+- code-server-dotfiles.yaml
+- code-server-ingress.yaml
+- code-server-ns.yaml
+- code-server-passwd.yaml
+- code-server-pvc.yaml
+- code-server-svc.yaml

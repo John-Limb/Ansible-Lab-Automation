@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: code-server-secret
+    namespace: code-server
+data:
+    PASSWORD: ENC[AES256_GCM,data:dBUf+QS8HpljVm699rw=,iv:+oQw7Ey8B6uXg1su4zUAZ/kD5JJQzqRHJBe+5dMJ/YI=,tag:Wu582n+Vq99TbUfNl4J24A==,type:str]
+    SUDO_PASSWORD: ENC[AES256_GCM,data:wJpEpuTZRM2nX0MQvVc=,iv:00lrxVKY20EEexH1Ve9UynRGr3JQpGQGKOgogiMnCgI=,tag:8kf4y/N3/30ut4RSeSS67g==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1a0q20utj6v2s7tajn7l8kwua0ga0aqple75mpvqfjt40t3za7fsqecmmxc
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBSUENnT2ZsT0Izblovd050
+            Rm1pOUNtRzdGeldhaVpDUkFwSzMrMWxONGlvCmpMYzZvK29xck1JQTVxYVp4QW5i
+            YmJRYXJCbmlxaUNLWWlYNHpGUmZTWUEKLS0tIE41RjdCTUNnQ0F1RGJ6U3BtV0VS
+            QTc0c2lWdGpybzZ4a21oZGYyNkk0NWMKPRjXUAipk/rnShtemT8HotJ7EH8u01a6
+            3vS0Ft4VjsKSfPIxu7caANnhpFnBL6WmU3wysCprWrH+W8o6bZCkKw==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2022-12-11T11:52:52Z"
+    mac: ENC[AES256_GCM,data:bhLWtdRg/WR/xcLnek9080cWXGRYgKsWmYbkt9+YUIRtIguJmsy48IUazQ44/v7zss71sZA0MM13ldqFYWOp2HEcovIdZwvRW7W2VkDVCuzYYuf3Ri1aZoOQYebullkyPO6RO3wd1U4vDJDv8rw5sBmMRjl35CDIaSF6RGfAysM=,iv:8lb0K73JWADRZVC03WqFFSzVB2AiaTvYc3gUKCvUD+8=,tag:itHSWKh8Wb1Mk5KTeCPb/w==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3
