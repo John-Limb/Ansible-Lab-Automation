@@ -9,4 +9,5 @@ spec:
     app: code-server
   ports:
     - name: svc-ui
-      port: 8469
+      port: 8443
+      targetPort: 8469

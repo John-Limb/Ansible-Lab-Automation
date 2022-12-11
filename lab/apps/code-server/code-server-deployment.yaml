@@ -33,7 +33,7 @@ spec:
               name: code-server-secret
         ports:
           - name: svc-ui
-            containerPort: 8469
+            containerPort: 8443
         livenessProbe:
           httpGet:
             path: /healthz
