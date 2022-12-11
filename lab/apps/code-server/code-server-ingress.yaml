@@ -13,7 +13,7 @@ spec:
     - match: Host(`code.${SECRET_INT_DOMAIN}`)
       kind: Rule
       services:
-        - name: ui-svc
+        - name: code-server-ui-svc
           port: 80
   tls:
     secretName: prod-code-${SECRET_INT_CERT_DOMAIN}
