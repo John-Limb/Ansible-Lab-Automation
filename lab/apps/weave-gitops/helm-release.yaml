@@ -37,6 +37,7 @@ spec:
     adminUser:
       create: true
       username: admin
+      createSecret: true
     metrics:
       enabled: true
     networkPolicy:
