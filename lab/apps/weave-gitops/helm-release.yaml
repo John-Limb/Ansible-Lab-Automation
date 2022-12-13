@@ -37,11 +37,11 @@ spec:
     adminUser:
       create: true
       username: admin
-  metrics:
+    metrics:
       enabled: true
-  networkPolicy:
-    create: false
-valuesFrom:
+    networkPolicy:
+     create: false
+  valuesFrom:
     - kind: Secret
       name: weave-gitops
       valuesKey: adminPassword
