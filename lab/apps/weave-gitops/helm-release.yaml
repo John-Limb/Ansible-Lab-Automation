@@ -30,7 +30,7 @@ spec:
         - apiGroups: ["infra.contrib.fluxcd.io"]
           resources: ["terraforms"]
           verbs: [ "get", "list", "patch" ]
-    replicaCount: 3
+    replicaCount: 2
     service:
       create: true
       port: 9001
