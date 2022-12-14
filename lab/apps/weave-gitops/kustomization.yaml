@@ -5,3 +5,4 @@ resources:
 - helm-repository.yaml
 - weave-ns.yaml
 - weave-secret.yaml
+- weave-ingress.yaml

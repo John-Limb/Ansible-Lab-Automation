@@ -1,0 +1,32 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: gitops-ingress
+  namespace: weave-gitops
+  annotations: 
+    kubernetes.io/ingress.class: traefik-external
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`gitops.${SECRET_INT_DOMAIN}`)
+      kind: Rule
+      services:
+        - name: weave-gitops
+          port: 9001
+  tls:
+    secretName: prod-gitops-${SECRET_INT_CERT_DOMAIN}
+---
+    apiVersion: cert-manager.io/v1
+    kind: Certificate
+    metadata:
+      name: gitops.${SECRET_INT_DOMAIN}
+      namespace: weave-gitops
+    spec:
+      secretName: prod-gitops-${SECRET_INT_CERT_DOMAIN}
+      issuerRef:
+        name: letsencrypt-production
+        kind: ClusterIssuer
+      commonName: "gitops.${SECRET_INT_DOMAIN}"
+      dnsNames:
+      - "gitops.${SECRET_INT_DOMAIN}"
