@@ -36,7 +36,7 @@ spec:
       port: 9001
     adminUser:
       create: true
-      username: admin
+      username: wego-admin
       createSecret: true
     metrics:
       enabled: true
