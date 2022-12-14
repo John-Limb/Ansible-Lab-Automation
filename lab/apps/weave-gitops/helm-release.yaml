@@ -24,7 +24,7 @@ spec:
   values:
     rbac:
       create: true
-      impersonationResourceNames: ["wego-admin", "wego-readonly","admin"]
+      impersonationResourceNames: ["wego-admin", "wego-readonly", "admin"]
       impersonationResources: ["groups", "users"]
       additionalRules:
         - apiGroups: ["infra.contrib.fluxcd.io"]
