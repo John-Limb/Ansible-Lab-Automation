@@ -8,7 +8,7 @@ spec:
   interval: 10m
   chart:
     spec:
-      chart: tailscale-realy
+      chart: tailscale-relay
       version: 0.1.12
       sourceRef: 
         kind: HelmRepository
