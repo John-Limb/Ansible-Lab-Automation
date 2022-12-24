@@ -1,7 +1,9 @@
 # Tailscale in k8s
 
 All credit goes to https://github.com/mvisonneau who created the following helm charts and container images
-https://github.com/mvisonneau/docker-tailscale
+* https://github.com/mvisonneau/docker-tailscale
+* https://github.com/mvisonneau/helm-charts/tree/main/charts/tailscale-relay
+
 
 ## The setup
 I am using flux manage the CD side of this deployment. 
