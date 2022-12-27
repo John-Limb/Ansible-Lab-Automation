@@ -3,10 +3,9 @@ kind: Secret
 metadata:
     name: traefik-dashboard-auth
     namespace: traefik
-type: kubernetes.io/basic-auth
+type: Opaque
 data:
-    username: ENC[AES256_GCM,data:g3bVXHpvCwc=,iv:dbMX7pygGfAY/0R+kh+1tJsxkK18C7ff8cW5vwd1PZI=,tag:4HjR/Z4JT+dYdqEPFjHT5g==,type:str]
-    password: ENC[AES256_GCM,data:llhi6lJoWbVAwga7,iv:OdoLxydVhTOG6fje7niSaOjTkrOq4CVxSGLJZqHJAfU=,tag:DiJOG0PyL4r8GM2tbt+oPQ==,type:str]
+    users: ENC[AES256_GCM,data:C3xIckHuFJY180HEE5YgLpRXHS/E47J9ElhKxB1WuiIjvJqI2dUObIyv9HsYqv5KPYXvTcBKICc5P2Y=,iv:NfB8vyNw99rVBddQVCH8kedABTyd32t6hh/+NqwKC/c=,tag:jH6pqywViVDKwdAU3zwC+Q==,type:str]
 sops:
     kms: []
     gcp_kms: []
@@ -22,8 +21,8 @@ sops:
             Z1VvUjNoRzRmTm0wWjMvaGlkWlFOd00KkGhLJFYdimuCaea+Iv3xbfT6Mcfeo7zW
             k24MD2NrnyBfCb6NvUFkpTce5eFdDsai3OjzbMignbYcZznxRIQYtg==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2022-12-27T23:25:54Z"
-    mac: ENC[AES256_GCM,data:LTjDNLPvWCxiFq2EoWgnw2uZxGO1VwCyMSTd2XhKkJJ4fxGsMZmmVQMyyTHZ0sgZVGgpGVSpdteK4d0f9FkvUQMOeNynHTx1xTyxoSMulrGRbZN/KXgfqRFRSINdWAAaWvAv31v44dRVnjQ3E/Ii7m7hxLdDw5TpVBolrCJaAjE=,iv:cg9i+06prF3DRAiTkmHTM7ZPshR5ypJ8pHJAnQrB5hc=,tag:xx+AD5KBQRUiwUimudlQ2g==,type:str]
+    lastmodified: "2022-12-27T23:31:47Z"
+    mac: ENC[AES256_GCM,data:RxxBpeyEqGVNS4Bn+0tCePZpgTBrQ35htFxMGYC6Fjb4o8UvwUBNeTi6uagWGzxK6GNexRSN2aNWNnRF+Jo7SmT2rn7Y3P5itf46qH/2Cg0hztLJAVLOx3sRylsYpVFREDi4X0QdmlaLAh+7i1J50WmbeMlbK0u0OEVm2749m50=,iv:qdDo224O2qHC5UZoz38vQco9C9Yd0jAnub5yCI0vWfQ=,tag:gbZAPPopykCI+dd9tiV1OA==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.7.3
