@@ -3,4 +3,7 @@ kind: Kustomization
 resources:
 - helm-release.yaml
 - helm-repository.yaml
+- traefik-dash-auth.yaml
+- traefik-ingress.yaml
+- traefik-middleware.yaml
 - traefik-ns.yaml
