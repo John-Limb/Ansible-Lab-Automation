@@ -119,7 +119,7 @@ spec:
        enabled: true
      prometheus:
       monitor:
-       enabled: true
+        enabled: true
         relabelings:
          - action: replace
            regex: (.*)
