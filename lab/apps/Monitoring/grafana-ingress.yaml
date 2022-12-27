@@ -2,7 +2,7 @@ apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
   name: grafana-ingress
-  namespace: monitoring
+  namespace: prometheus
   annotations: 
     kubernetes.io/ingress.class: traefik-external 
 spec:
@@ -27,7 +27,7 @@ spec:
     kind: Certificate
     metadata:
       name: grafana.${SECRET_INT_DOMAIN}
-      namespace: monitoring
+      namespace: prometheus
     spec:
       secretName: prod-grafana-${SECRET_INT_CERT_DOMAIN}
       issuerRef:
