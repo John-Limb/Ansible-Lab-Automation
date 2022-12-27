@@ -7,3 +7,4 @@ metadata:
 data:
   CLUSTER_NAME: "k3s-lab"
   TZ: "Europe/London"
+  METALLB_TRAEFIK_ADDR: 192.168.1.38
