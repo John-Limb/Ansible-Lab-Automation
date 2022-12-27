@@ -4,3 +4,4 @@ resources:
 - grafana-ingress.yaml
 - helm-release.yaml
 - helm-repository.yaml
+- monitoring-ns.yaml
