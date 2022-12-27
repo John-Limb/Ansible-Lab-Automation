@@ -77,8 +77,8 @@ spec:
         sniStrict: true
     providers:
        kubernetesCRD:
-       enabled: true
-       ingressClass: traefik-external
+         enabled: true
+         ingressClass: traefik-external
     kubernetesIngress:
       enabled: true
       publishedService:
