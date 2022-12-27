@@ -1,0 +1,38 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: grafana-ingress
+  namespace: monitoring
+  annotations: 
+    kubernetes.io/ingress.class: traefik-external 
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`grafana.${SECRET_INT_DOMAIN}`)
+      kind: Rule
+      services:
+        - name: grafana
+          port: 80
+          sticky:
+            cookie:
+              httpOnly: true
+              name: grafana
+              secure: true
+              sameSite: none
+  tls:
+    secretName: prod-grafana-${SECRET_INT_CERT_DOMAIN}
+---
+    apiVersion: cert-manager.io/v1
+    kind: Certificate
+    metadata:
+      name: grafana.${SECRET_INT_DOMAIN}
+      namespace: monitoring
+    spec:
+      secretName: prod-grafana-${SECRET_INT_CERT_DOMAIN}
+      issuerRef:
+        name: letsencrypt-production
+        kind: ClusterIssuer
+      commonName: "grafana.${SECRET_INT_DOMAIN}"
+      dnsNames:
+      - "grafana.${SECRET_INT_DOMAIN}"
