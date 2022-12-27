@@ -63,92 +63,63 @@ spec:
      forceDeployDashboards: false
      defaultDashboardsEnabled: true
      defaultDashboardsTimezone: utc
-    serviceMonitor:
-      enabled: true
-    admin:
-      existingSecret: grafana-admin-credentials
-      userKey: admin-user
-      passwordKey: admin-password
-  kubeApiServer:
-    enabled: true
-  kubelet:
-    enabled: true
-    serviceMonitor:
-     metricRelabelings:
-      - action: replace
-        sourceLabels:
-          - node
-        targetLabel: instance
-  kubeControllerManager:
-   enabled: true
-   endpoints: # ips of servers 
-    - 192.168.1.15
-    - 192.168.1.16
-    - 192.168.1.17
-  coreDns:
-   enabled: true
-  kubeDns:
-   enabled: false
-  kubeEtcd:
-   enabled: true
-   endpoints: # ips of servers
-    - 192.168.1.15
-    - 192.168.1.16
-    - 192.168.1.17
-   service:
-     enabled: true
-     port: 2381
-     targetPort: 2381
-  kubeScheduler:
-   enabled: true
-   endpoints: # ips of servers
-    - 192.168.1.15
-    - 192.168.1.16
-    - 192.168.1.17
-  kubeProxy:
-   enabled: true
-   endpoints: # ips of servers
-    - 192.168.1.15
-    - 192.168.1.16
-    - 192.168.1.17
-  kubeStateMetrics:
-   enabled: true
-  kube-state-metrics:
-   fullnameOverride: kube-state-metrics
-   selfMonitor:
-     enabled: true
-  prometheus:
-     monitor:
+     serviceMonitor:
        enabled: true
-       relabelings:
+     admin:
+       existingSecret: grafana-admin-credentials
+       userKey: admin-user
+       passwordKey: admin-password
+    kubeApiServer:
+     enabled: true
+    kubelet:
+     enabled: true
+     serviceMonitor:
+       metricRelabelings:
         - action: replace
-          regex: (.*)
-          replacement: $1
           sourceLabels:
-            - __meta_kubernetes_pod_node_name
-          targetLabel: kubernetes_node
-  nodeExporter:
-   enabled: true
-   serviceMonitor:
-     relabelings:
-      - action: replace
-        regex: (.*)
-        replacement: $1
-        sourceLabels:
-          - __meta_kubernetes_pod_node_name
-        targetLabel: kubernetes_node
-  prometheus-node-exporter:
-   fullnameOverride: node-exporter
-   podLabels:
-     jobLabel: node-exporter
-   extraArgs:
-    - --collector.filesystem.mount-points-exclude=^/(dev|proc|sys|var/lib/docker/.+|var/lib/kubelet/.+)($|/)
-    - --collector.filesystem.fs-types-exclude=^(autofs|binfmt_misc|bpf|cgroup2?|configfs|debugfs|devpts|devtmpfs|fusectl|hugetlbfs|iso9660|mqueue|nsfs|overlay|proc|procfs|pstore|rpc_pipefs|securityfs|selinuxfs|squashfs|sysfs|tracefs)$
-   service:
-      portName: http-metrics
-   prometheus:
-     monitor:
-        enabled: true
+          - node
+          targetLabel: instance
+    kubeControllerManager:
+      enabled: true
+      endpoints: # ips of servers 
+      - 192.168.1.15
+      - 192.168.1.16
+      - 192.168.1.17
+    coreDns:
+     enabled: true
+    kubeDns:
+     enabled: false
+    kubeEtcd:
+     enabled: true
+     endpoints: # ips of servers
+        - 192.168.1.15
+        - 192.168.1.16
+        - 192.168.1.17
+     service:
+       enabled: true
+       port: 2381
+       targetPort: 2381
+    kubeScheduler:
+      enabled: true
+      endpoints: # ips of servers
+      - 192.168.1.15
+      - 192.168.1.16
+      - 192.168.1.17
+    kubeProxy:
+      enabled: true
+      endpoints: # ips of servers
+      - 192.168.1.15
+      - 192.168.1.16
+      - 192.168.1.17
+    kubeStateMetrics:
+     enabled: true
+    kube-state-metrics:
+     fullnameOverride: kube-state-metrics
+     selfMonitor:
+       enabled: true
+     prometheus:
+      monitor:
+       enabled: true
         relabelings:
          - action: replace
            regex: (.*)
@@ -156,32 +127,61 @@ spec:
            sourceLabels:
              - __meta_kubernetes_pod_node_name
            targetLabel: kubernetes_node
-     resources:
+    nodeExporter:
+     enabled: true
+     serviceMonitor:
+       relabelings:
+        - action: replace
+          regex: (.*)
+          replacement: $1
+          sourceLabels:
+           - __meta_kubernetes_pod_node_name
+          targetLabel: kubernetes_node
+    prometheus-node-exporter:
+     fullnameOverride: node-exporter
+     podLabels:
+       jobLabel: node-exporter
+     extraArgs:
+      - --collector.filesystem.mount-points-exclude=^/(dev|proc|sys|var/lib/docker/.+|var/lib/kubelet/.+)($|/)
+      - --collector.filesystem.fs-types-exclude=^(autofs|binfmt_misc|bpf|cgroup2?|configfs|debugfs|devpts|devtmpfs|fusectl|hugetlbfs|iso9660|mqueue|nsfs|overlay|proc|procfs|pstore|rpc_pipefs|securityfs|selinuxfs|squashfs|sysfs|tracefs)$
+     service:
+       portName: http-metrics
+     prometheus:
+      monitor:
+        enabled: true
+        relabelings:
+          - action: replace
+            regex: (.*)
+            replacement: $1
+            sourceLabels:
+              - __meta_kubernetes_pod_node_name
+            targetLabel: kubernetes_node
+    resources:
       requests:
        memory: 512Mi
        cpu: 150m
-     limits:
-       memory: 2048Mi
-  prometheusOperator:
-    enabled: true
-    prometheusConfigReloader:
-    resources:
-      requests:
-        cpu: 100m
-        memory: 50Mi
       limits:
-        memory: 100Mi
+       memory: 2048Mi
+    prometheusOperator:
+     enabled: true
+     prometheusConfigReloader:
+     resources:
+        requests:
+          cpu: 100m
+          memory: 50Mi
+        limits:
+          memory: 100Mi
     prometheus:
      enabled: true
      prometheusSpec:
-      replicas: 1
-      replicaExternalLabelName: "replica"
-      ruleSelectorNilUsesHelmValues: false
-      serviceMonitorSelectorNilUsesHelmValues: false
-      podMonitorSelectorNilUsesHelmValues: false
-      probeSelectorNilUsesHelmValues: false
-      retention: 6h
-      enableAdminAPI: true
-      walCompression: true
-  thanosRuler:
-   enabled: false
+     replicas: 1
+     replicaExternalLabelName: "replica"
+     ruleSelectorNilUsesHelmValues: false
+     serviceMonitorSelectorNilUsesHelmValues: false
+     podMonitorSelectorNilUsesHelmValues: false
+     probeSelectorNilUsesHelmValues: false
+     retention: 6h
+     enableAdminAPI: true
+     walCompression: true
+    thanosRuler:
+     enabled: false
