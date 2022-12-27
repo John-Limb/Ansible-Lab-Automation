@@ -28,7 +28,7 @@ spec:
         secret:
           secretName: prod-heimdall-${SECRET_INT_CERT_DOMAIN} # < the name ssl certificate, will be created in the ingress yaml
       containers:
-      - image: ghcr.io/linuxserver/heimdall:v2.4.13-ls188 # < the name of the docker image we will use
+      - image: ghcr.io/linuxserver/heimdall:v2.5.4-ls198 # < the name of the docker image we will use
         name: heimdall                      # < name of container
         imagePullPolicy: Always  # < always use the latest image when creating container/pod
         resources:
