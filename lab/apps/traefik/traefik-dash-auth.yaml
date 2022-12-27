@@ -3,9 +3,12 @@ kind: Secret
 metadata:
     name: traefik-dashboard-auth
     namespace: traefik
-type: Opaque
+type: kubernetes.io/basic-auth
 data:
-    users: ENC[AES256_GCM,data:QwJUBcS+oHSyp8DgGo4TGKKsO+utNnkt3XI8gUnpXiKbyScVNDV4GYPHEke3b0Z3nQQeQBcpSINjU9+Fx2rOGQ==,iv:5349151GcKDznKeEkfckVqHPXMZrhJ80zXG6jgejYbw=,tag:B+ntFNi9dUIAVQi4dsB3SA==,type:str]
+    #ENC[AES256_GCM,data:2OvTroavtPM7iXskwPl7,iv:OdN0I2pu1XXQY/Vpejdzk2rP7RAe22q3ZUFc2pRQa9c=,tag:8420peI7d7U18g0RE5RbRg==,type:comment]
+    username: ENC[AES256_GCM,data:g3bVXHpvCwc=,iv:dbMX7pygGfAY/0R+kh+1tJsxkK18C7ff8cW5vwd1PZI=,tag:4HjR/Z4JT+dYdqEPFjHT5g==,type:str]
+    #ENC[AES256_GCM,data:9TUcnVTy1khETSCdPhryj0GY7g==,iv:kr+vWUyPB/n9hT+hZAtJiFAncy2LynOJ0z0FF7NUZxU=,tag:mnWlfpD6lrGYc42C+iERLQ==,type:comment]
+    password: ENC[AES256_GCM,data:llhi6lJoWbVAwga7,iv:OdoLxydVhTOG6fje7niSaOjTkrOq4CVxSGLJZqHJAfU=,tag:DiJOG0PyL4r8GM2tbt+oPQ==,type:str]
 sops:
     kms: []
     gcp_kms: []
@@ -21,8 +24,8 @@ sops:
             Z1VvUjNoRzRmTm0wWjMvaGlkWlFOd00KkGhLJFYdimuCaea+Iv3xbfT6Mcfeo7zW
             k24MD2NrnyBfCb6NvUFkpTce5eFdDsai3OjzbMignbYcZznxRIQYtg==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2022-12-27T23:15:14Z"
-    mac: ENC[AES256_GCM,data:6AQKymxY8LU7JPBEUziQ2rZe+YwL3iKcDchmWpwlXi+Xxj1gBS1CHlWhsnwSh5JW2L6iVCsST/kkL3drZWaKNIgzIdt1ts0Ko3GsXOtHhnFN6eCGw+lzotwXkLNuFbHKejeyu9xhFqeJPNbEo4Uw5JP6l+3hLsy7ZuRwsvVrphA=,iv:PFZuwwxfrclgqoyp34dhzxGvvNgQnT4rAvF8sxuw+wk=,tag:hHL17Qf6udC0sRCD4qDnmw==,type:str]
+    lastmodified: "2022-12-27T23:24:10Z"
+    mac: ENC[AES256_GCM,data:aP6/JOdOvCAej9ajCt7FZvjXP5vEq95RbQX1K+gBkFfSgN3+iIN06K97gTcRrfN8KilcDg5P2hC9CME+6OJUwlcY9RGPBGj3Jj4RQYXLKDDarQfkNZJb+iEaExUnyWLhV5FjnTKew+YBmlzwchYN0USuuMQJbz5UQhnznt2W2WM=,iv:FR/r2sIVDruirwVPjkc59VqjLG42dnESiBMe7c5Gt30=,tag:E5tV4xdxvQuuUnl2/hs8iw==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.7.3
