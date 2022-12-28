@@ -5,7 +5,7 @@ metadata:
     namespace: traefik
 type: Opaque
 data:
-    users: ENC[AES256_GCM,data:C3xIckHuFJY180HEE5YgLpRXHS/E47J9ElhKxB1WuiIjvJqI2dUObIyv9HsYqv5KPYXvTcBKICc5P2Y=,iv:NfB8vyNw99rVBddQVCH8kedABTyd32t6hh/+NqwKC/c=,tag:jH6pqywViVDKwdAU3zwC+Q==,type:str]
+    users: ENC[AES256_GCM,data:fQ5X4YmRhzgdyaTCABL5raNsUpPJBLW7pBP+li8XVLtzbsAeeIqLYOESXp63I8V+BEBo4IbOdMYOptTb,iv:RxeJL1S3Ztn5Zsww1/FpLPm0V3zfOo/9m0L/z2leCXI=,tag:9yOAmrHC55bWq85J8i6WSg==,type:str]
 sops:
     kms: []
     gcp_kms: []
@@ -21,8 +21,8 @@ sops:
             Z1VvUjNoRzRmTm0wWjMvaGlkWlFOd00KkGhLJFYdimuCaea+Iv3xbfT6Mcfeo7zW
             k24MD2NrnyBfCb6NvUFkpTce5eFdDsai3OjzbMignbYcZznxRIQYtg==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2022-12-27T23:31:47Z"
-    mac: ENC[AES256_GCM,data:RxxBpeyEqGVNS4Bn+0tCePZpgTBrQ35htFxMGYC6Fjb4o8UvwUBNeTi6uagWGzxK6GNexRSN2aNWNnRF+Jo7SmT2rn7Y3P5itf46qH/2Cg0hztLJAVLOx3sRylsYpVFREDi4X0QdmlaLAh+7i1J50WmbeMlbK0u0OEVm2749m50=,iv:qdDo224O2qHC5UZoz38vQco9C9Yd0jAnub5yCI0vWfQ=,tag:gbZAPPopykCI+dd9tiV1OA==,type:str]
+    lastmodified: "2022-12-28T00:18:20Z"
+    mac: ENC[AES256_GCM,data:WhYxnUvVN/RUlEK6ONxym00KvRefG864jud8S9xLYUtxYn7t4y6bD4UrYqgMVnIQTZjRl0jI4foO2JgU2ru0zu+BKb9mBFyC+VkchdP+8iFyOO9JrY2ixVWl4UyDz/AfUzNxOiVo7gG6kU5Pw3hig5OcVM4e9l6Auk9Q3QfmEHA=,iv:WS8kM76YWdQ6JI/ldMLEIPqaIuyeQATsS99Vqja8/hw=,tag:5Avl9iiTGvbdQ8F6PkXrcA==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.7.3
