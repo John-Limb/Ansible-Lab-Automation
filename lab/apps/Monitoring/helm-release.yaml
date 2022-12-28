@@ -22,7 +22,6 @@ spec:
     remediation:
       retries: 5
   values:
-    fullnameOverride: prometheus
     defaultRules:
      create: true
      rules:
