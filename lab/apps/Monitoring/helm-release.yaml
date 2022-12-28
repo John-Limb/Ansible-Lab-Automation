@@ -153,10 +153,10 @@ spec:
             targetLabel: kubernetes_node
     resources:
       requests:
-       memory: 512Mi
+       memory: 256Mi
        cpu: 150m
       limits:
-       memory: 2048Mi
+       memory: 1024Mi
     prometheusOperator:
      enabled: true
      prometheusConfigReloader:
