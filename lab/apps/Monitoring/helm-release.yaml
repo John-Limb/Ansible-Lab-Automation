@@ -51,13 +51,11 @@ spec:
        prometheus: true
        prometheusOperator: true
     alertmanager:
-      fullnameOverride: alertmanager
       enabled: true
       ingress:
        enabled: false
     grafana:
      enabled: true
-     fullnameOverride: grafana
      forceDeployDatasources: false
      forceDeployDashboards: false
      defaultDashboardsEnabled: true
@@ -113,7 +111,6 @@ spec:
     kubeStateMetrics:
      enabled: true
     kube-state-metrics:
-     fullnameOverride: kube-state-metrics
      selfMonitor:
        enabled: true
      prometheus:
@@ -137,7 +134,6 @@ spec:
            - __meta_kubernetes_pod_node_name
           targetLabel: kubernetes_node
     prometheus-node-exporter:
-     fullnameOverride: node-exporter
      podLabels:
        jobLabel: node-exporter
      extraArgs:
