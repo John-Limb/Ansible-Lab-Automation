@@ -167,8 +167,8 @@ spec:
         limits:
           memory: 100Mi
     prometheus:
-     enabled: true
-     prometheusSpec:
+      enabled: true
+      prometheusSpec:
        replicas: 1
        replicaExternalLabelName: "replica"
        ruleSelectorNilUsesHelmValues: false
