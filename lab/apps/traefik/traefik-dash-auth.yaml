@@ -4,8 +4,8 @@ metadata:
     name: traefik-dashboard-auth
     namespace: traefik
 type: Opaque
-data:
-    users: ENC[AES256_GCM,data:fQ5X4YmRhzgdyaTCABL5raNsUpPJBLW7pBP+li8XVLtzbsAeeIqLYOESXp63I8V+BEBo4IbOdMYOptTb,iv:RxeJL1S3Ztn5Zsww1/FpLPm0V3zfOo/9m0L/z2leCXI=,tag:9yOAmrHC55bWq85J8i6WSg==,type:str]
+stringData:
+    users: ENC[AES256_GCM,data:8KewDGNIrH+FQPQqVbPQVesYIL9TVFe7iyvUPVNR2Jdhz3X06lZ9SjRh72uf/9zaY2AGNJh5yvkpKlg=,iv:sAdPpopXtMV/7er781ZhdwHT9ZOqqbAdlwDqvRPhuxM=,tag:YKEmg0O/+sm7nl4INaw4GQ==,type:str]
 sops:
     kms: []
     gcp_kms: []
@@ -21,8 +21,8 @@ sops:
             Z1VvUjNoRzRmTm0wWjMvaGlkWlFOd00KkGhLJFYdimuCaea+Iv3xbfT6Mcfeo7zW
             k24MD2NrnyBfCb6NvUFkpTce5eFdDsai3OjzbMignbYcZznxRIQYtg==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2022-12-28T00:18:20Z"
-    mac: ENC[AES256_GCM,data:WhYxnUvVN/RUlEK6ONxym00KvRefG864jud8S9xLYUtxYn7t4y6bD4UrYqgMVnIQTZjRl0jI4foO2JgU2ru0zu+BKb9mBFyC+VkchdP+8iFyOO9JrY2ixVWl4UyDz/AfUzNxOiVo7gG6kU5Pw3hig5OcVM4e9l6Auk9Q3QfmEHA=,iv:WS8kM76YWdQ6JI/ldMLEIPqaIuyeQATsS99Vqja8/hw=,tag:5Avl9iiTGvbdQ8F6PkXrcA==,type:str]
+    lastmodified: "2022-12-30T13:43:46Z"
+    mac: ENC[AES256_GCM,data:BYf0f8NJd7Q5FLuu5nO7L93d4TGUpYBbraoWFBsevPduHFg8FBKHRaCOUbvmfTzWX0YRcdAzGqPjG8iiPrY+AHHzeNsj0UXCnMBDDE73rKOCS67gerH40MCUVwSGvpkdWYvgPQ73bPh4MPYwh3PCiq52VUu+mn26ZUuJoeumTCw=,iv:MGFXzzIxbgygq+Zi2LHkVLrz9iFztClgZQQxOtcVahU=,tag:87KZwySAviGqJt9EYJFkaQ==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.7.3
