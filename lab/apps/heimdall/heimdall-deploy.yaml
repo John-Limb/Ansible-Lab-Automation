@@ -36,8 +36,8 @@ spec:
             memory: "120Mi"
             cpu: "150m"
           requests:
-            memory: "120Mi"
-            cpu: "150m"
+            memory: "80Mi"
+            cpu: "100m"
         env:                                # < the environment variables required (see container documentation)
         - name: PGID
           value: "100" # < group "user"
