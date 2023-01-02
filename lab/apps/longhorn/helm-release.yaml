@@ -22,7 +22,7 @@ spec:
       reclaimPolicy: Retain
       recurringJobSelector:
         enable: false
-  defaultSettings:
+    defaultSettings:
       storageOverProvisioningPercentage: 100
       storageMinimalAvailablePercentage: 10
       nodeDownPodDeletionPolicy: delete-both-statefulset-and-deployment-pod
