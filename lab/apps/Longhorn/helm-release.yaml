@@ -28,7 +28,7 @@ spec:
       nodeDownPodDeletionPolicy: delete-both-statefulset-and-deployment-pod
       backupTarget: ${s3_backup-location}
       backupTargetCredentialSecret: aws-secret
-      backupstorePollInterval: 
+      backupstorePollInterval: 43200
       restoreVolumeRecurringJobs: true
       defaultLonghornStaticStorageClass: longhorn-backup
       concurrentAutomaticEngineUpgradePerNodeLimit: 1
