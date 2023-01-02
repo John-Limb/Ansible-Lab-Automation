@@ -27,6 +27,7 @@ spec:
       storageMinimalAvailablePercentage: 10
       nodeDownPodDeletionPolicy: delete-both-statefulset-and-deployment-pod
       backupTargetCredentialSecret: aws-secret
+      backupTarget: "S3://${SECRET_AWS_BUCKET}@eu-west-2/"
       backupstorePollInterval: 43200
       restoreVolumeRecurringJobs: true
       concurrentAutomaticEngineUpgradePerNodeLimit: 1
