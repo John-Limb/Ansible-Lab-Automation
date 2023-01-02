@@ -26,7 +26,6 @@ spec:
       storageOverProvisioningPercentage: 100
       storageMinimalAvailablePercentage: 10
       nodeDownPodDeletionPolicy: delete-both-statefulset-and-deployment-pod
-      backupTarget: ${S3_BACKUP_LOCATION}
       backupTargetCredentialSecret: aws-secret
       backupstorePollInterval: 43200
       restoreVolumeRecurringJobs: true
