@@ -2,7 +2,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: kube-prometheus-stack
-  namespace: prometheus
+  namespace: monitoring
 spec:
   interval: 15m
   chart:
@@ -79,9 +79,9 @@ spec:
     kubeControllerManager:
       enabled: true
       endpoints: # ips of servers 
-      - 192.168.1.15
-      - 192.168.1.16
-      - 192.168.1.17
+      - 192.168.1.11
+      - 192.168.1.12
+      - 192.168.1.13
     coreDns:
      enabled: true
     kubeDns:
@@ -89,9 +89,9 @@ spec:
     kubeEtcd:
      enabled: true
      endpoints: # ips of servers
-        - 192.168.1.15
-        - 192.168.1.16
-        - 192.168.1.17
+        - 192.168.1.11
+        - 192.168.1.12
+        - 192.168.1.13
      service:
        enabled: true
        port: 2381
@@ -99,15 +99,15 @@ spec:
     kubeScheduler:
       enabled: true
       endpoints: # ips of servers
-      - 192.168.1.15
-      - 192.168.1.16
-      - 192.168.1.17
+      - 192.168.1.11
+      - 192.168.1.12
+      - 192.168.1.13
     kubeProxy:
       enabled: true
       endpoints: # ips of servers
-      - 192.168.1.15
-      - 192.168.1.16
-      - 192.168.1.17
+      - 192.168.1.11
+      - 192.168.1.12
+      - 192.168.1.13
     kubeStateMetrics:
      enabled: true
     kube-state-metrics:
