@@ -4,3 +4,4 @@ resources:
 - helm-release.yaml
 - helm-repository.yaml
 - longhorn-ingress.yaml
+- longhorn-ns.yaml
