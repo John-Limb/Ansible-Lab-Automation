@@ -5,7 +5,7 @@ metadata:
   name: cluster-apps-cert-manager
   namespace: flux-system
 spec:
-  path: ./clusters/lab/apps/Networking/cert-manager
+  path: ./clusters/lab/apps/Networking/cert-manager/
   prune: true
   sourceRef:
     kind: GitRepository
@@ -27,7 +27,7 @@ metadata:
 spec:
   dependsOn:
     - name: cluster-apps-cert-manager
-  path: ./clusters/lap/apps/Networking/cert-manager/issuers
+  path: ./clusters/lab/apps/Networking/cert-manager/issuers
   prune: true
   sourceRef:
     kind: GitRepository
