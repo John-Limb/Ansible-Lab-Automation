@@ -1,5 +1,5 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-- Namespace.yaml
-- ./metallb/kustomization.yaml
+- IPpool.yaml
+- L2Advertisment.yaml
