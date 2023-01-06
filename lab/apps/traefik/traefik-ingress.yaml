@@ -2,7 +2,7 @@ apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
   name: traefik-dashboard
-  namespace: traefik
+  namespace: networking-system
   annotations: 
     kubernetes.io/ingress.class: traefik-external
 spec:
@@ -13,7 +13,7 @@ spec:
       kind: Rule
       middlewares:
         - name: traefik-dashboard-basicauth
-          namespace: traefik
+          namespace: networking-system
       services:
         - name: api@internal
           kind: TraefikService
@@ -24,7 +24,7 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: traefik.${SECRET_INT_DOMAIN}
-  namespace: traefik
+  namespace: networking-system
 spec:
   secretName: prod-traefik-${SECRET_INT_CERT_DOMAIN}
   issuerRef:
